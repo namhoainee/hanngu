@@ -1,0 +1,60 @@
+/* Hanzi Canvas & Toolbar */
+.stroke-practice-box {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.canvas-toolbar { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.color-picker { display: flex; gap: 0.5rem; }
+.color-btn { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: transform 0.2s; }
+.color-btn.active { transform: scale(1.2); border-color: #FFF; }
+
+.canvas-wrapper {
+  position: relative;
+  width: 290px;
+  height: 290px;
+  margin: 0 auto;
+  border: 2px dashed var(--glass-border);
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="light"] .canvas-wrapper { background: #FFF; }
+.grid-lines { position: absolute; inset: 0; pointer-events: none; }
+.grid-lines line { stroke: var(--glass-border); stroke-dasharray: 4; }
+#hanziCanvas { position: absolute; inset: 0; cursor: crosshair; touch-action: none; }
+
+.character-selector { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; }
+.char-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  font-size: 1.75rem;
+  font-family: var(--font-calligraphy);
+  color: var(--text-main);
+  transition: all 0.2s;
+}
+
+.char-btn.active, .char-btn:hover { background: var(--primary-green); border-color: var(--primary-green); color: #FFF; }
+.stroke-controls { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+/* VOCABULARY LAB */
+.vocab-search-container { max-width: 620px; margin: 0 auto 3rem auto; position: relative; }
+.vocab-search-input { width: 100%; padding: 1rem 1.5rem 1rem 3.5rem; border-radius: var(--radius-full); background: var(--bg-card); border: 1px solid var(--glass-border); color: var(--text-main); font-size: 1.1rem; }
+.vocab-search-icon { position: absolute; left: 1.35rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 1.2rem; }
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.75rem; }
+.vocab-card { background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1.75rem; transition: all 0.2s; position: relative; }
+.vocab-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); box-shadow: var(--shadow-md); }
+.vocab-hanzi { font-size: 3.25rem; font-weight: 900; color: var(--text-main); line-height: 1; font-family: var(--font-chinese-serif); }
+.vocab-py { color: var(--accent-gold); font-size: 1.15rem; font-weight: 800; margin: 0.25rem 0 0.75rem 0; }
+.vocab-meaning { color: var(--text-secondary); font-size: 0.95rem; }

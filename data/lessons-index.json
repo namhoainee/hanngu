@@ -1,0 +1,17 @@
+{
+  "lessons": [
+    {
+      "id": "hsk1-lesson-01",
+      "courseId": "hsk1",
+      "hskLevel": "HSK1",
+      "order": 1,
+      "title": "Chào Hỏi",
+      "topic": "Chào hỏi & Giới thiệu bản thân",
+      "vocabCount": 10,
+      "grammarCount": 2,
+      "quizCount": 5,
+      "status": "published",
+      "path": "hsk/hsk1/lesson-01.json"
+    }
+  ]
+}

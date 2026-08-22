@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài Học | Hán Ngữ Master</title>
+  <meta name="description" content="Xem chi tiết bài học: từ vựng, ngữ pháp, hội thoại, quiz và flashcard.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav class="navbar subpage" id="navbar">
+      <div class="container nav-container">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="trangchu.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="lotrinh-hsk.html" class="nav-link active">Lộ Trình HSK</a></li>
+          <li><a href="luyen-pinyin.html" class="nav-link">Bảng Pinyin</a></li>
+          <li><a href="luyen-tu-vung.html" class="nav-link">Từ Vựng & Hanzi</a></li>
+          <li><a href="ai-tutor.html" class="nav-link">AI Speaking Tutor</a></li>
+          <li><a href="thi-hsk.html" class="nav-link">Thi Thử HSK</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+          <a href="#" class="btn btn-primary" data-modal="trialModal">
+            <i class="fas fa-sparkles"></i> Học Thử Miễn Phí
+          </a>
+          <button class="mobile-menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+        <button id="closeMobileDrawerBtn" style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+      </div>
+
+      <ul class="mobile-drawer-links">
+        <li><a href="trangchu.html" class="mobile-drawer-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+        <li><a href="lotrinh-hsk.html" class="mobile-drawer-link active"><i class="fas fa-graduation-cap"></i> Lộ Trình HSK</a></li>
+        <li><a href="luyen-pinyin.html" class="mobile-drawer-link"><i class="fas fa-music"></i> Bảng Pinyin</a></li>
+        <li><a href="luyen-tu-vung.html" class="mobile-drawer-link"><i class="fas fa-book"></i> Từ Vựng & Hanzi</a></li>
+        <li><a href="ai-tutor.html" class="mobile-drawer-link"><i class="fas fa-robot"></i> AI Speaking Tutor</a></li>
+        <li><a href="thi-hsk.html" class="mobile-drawer-link"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANNER -->
+    <section class="page-header-banner text-center">
+      <div class="container">
+        <span class="section-tag" id="lessonHskBadge"><i class="fas fa-graduation-cap"></i> HSK</span>
+        <h1 class="section-title" id="lessonTitle">Đang tải bài học...</h1>
+        <p class="section-desc" id="lessonDesc"></p>
+      </div>
+    </section>
+
+    <section style="padding: 2rem 0 0 0;">
+      <div class="container">
+        <div class="tab-nav" id="lessonTabNav">
+          <button class="tab-btn active" data-tab="tabVocab"><i class="fas fa-font"></i> Từ Vựng</button>
+          <button class="tab-btn" data-tab="tabGrammar"><i class="fas fa-bookmark"></i> Ngữ Pháp</button>
+          <button class="tab-btn" data-tab="tabDialogue"><i class="fas fa-comments"></i> Hội Thoại</button>
+          <button class="tab-btn" data-tab="tabFlashcard"><i class="fas fa-clone"></i> Flashcard</button>
+          <button class="tab-btn" data-tab="tabQuiz"><i class="fas fa-question-circle"></i> Quiz</button>
+          <button class="tab-btn" data-tab="tabListening"><i class="fas fa-headphones-alt"></i> Luyện Nghe</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOCABULARY TAB -->
+    <section style="padding: 3rem 0;">
+      <div class="container">
+        <div id="tabVocab" class="tab-content active">
+          <div class="vocab-grid" id="lessonVocabGrid"></div>
+        </div>
+
+        <!-- GRAMMAR TAB -->
+        <div id="tabGrammar" class="tab-content">
+          <div class="knowledge-grid" id="lessonGrammarGrid"></div>
+        </div>
+
+        <!-- DIALOGUE TAB -->
+        <div id="tabDialogue" class="tab-content">
+          <div class="ai-tutor-box" style="max-width: 720px; margin: 0 auto;">
+            <div class="chat-header">
+              <div class="tutor-info">
+                <div class="tutor-avatar"><i class="fas fa-comments"></i></div>
+                <div>
+                  <h4 style="font-size: 1rem; font-weight: 800;" id="lessonDialogueTitle">Hội thoại</h4>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary);">Bấm vào loa để nghe phát âm</div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-messages" id="lessonDialogueMessages" style="height: auto; max-height: 480px;"></div>
+          </div>
+        </div>
+
+        <!-- FLASHCARD TAB -->
+        <div id="tabFlashcard" class="tab-content">
+          <div class="flashcard-wrapper">
+            <div class="flashcard-3d" id="lessonFlashcard3d">
+              <div class="flashcard-face flashcard-front">
+                <div class="vocab-hanzi cn-serif" id="lessonCardFrontHanzi"></div>
+                <div class="vocab-py" id="lessonCardFrontPinyin"></div>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                <div style="font-size:1.3rem; font-weight:800;" id="lessonCardBackMeaning"></div>
+                <p class="example-vi" style="margin-top:0.75rem;" id="lessonCardBackExample"></p>
+              </div>
+            </div>
+            <div class="flashcard-controls">
+              <button class="btn btn-secondary" id="lessonPrevCardBtn"><i class="fas fa-arrow-left"></i></button>
+              <span id="lessonCardCounter" style="font-weight:800;"></span>
+              <button class="btn btn-secondary" id="lessonNextCardBtn"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUIZ TAB -->
+        <div id="tabQuiz" class="tab-content">
+          <div class="quiz-box" id="lessonQuizBox" style="max-width: 720px; margin: 0 auto;"></div>
+        </div>
+
+        <!-- LISTENING TAB (placeholder) -->
+        <div id="tabListening" class="tab-content">
+          <div class="knowledge-card text-center" style="max-width: 520px; margin: 0 auto;">
+            <div class="knowledge-icon"><i class="fas fa-headphones-alt"></i></div>
+            <h3 class="knowledge-title">Luyện Nghe</h3>
+            <p class="knowledge-desc" id="lessonListeningNote">Chức năng luyện nghe đang được chuẩn bị, sẽ sớm ra mắt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Hán Ngữ Master. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils/localData.js"></script>
+  <script src="../js/config/config.js"></script>
+  <script src="../js/api/vocabularyApi.js"></script>
+  <script src="../js/api/grammarApi.js"></script>
+  <script src="../js/api/dialogueApi.js"></script>
+  <script src="../js/api/quizApi.js"></script>
+  <script src="../js/api/lessonApi.js"></script>
+  <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/lesson.js"></script>
+</body>
+</html>

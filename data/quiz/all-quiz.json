@@ -1,0 +1,84 @@
+{
+  "quiz": [
+    {
+      "id": "q001",
+      "question": "Từ '你好' (nǐ hǎo) có nghĩa là gì?",
+      "type": "multiple_choice",
+      "options": [
+        "Cảm ơn",
+        "Xin chào",
+        "Tạm biệt",
+        "Xin lỗi"
+      ],
+      "correctIndex": 1,
+      "explain": "你好 (nǐ hǎo) nghĩa là 'Xin chào'.",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi",
+      "hskLevel": "HSK1"
+    },
+    {
+      "id": "q002",
+      "question": "Chọn cách hỏi tên đúng trong tiếng Trung:",
+      "type": "multiple_choice",
+      "options": [
+        "你叫什么名字？",
+        "你是哪国人？",
+        "你多大了？",
+        "你好吗？"
+      ],
+      "correctIndex": 0,
+      "explain": "你叫什么名字？ (Nǐ jiào shénme míngzi?) nghĩa là 'Bạn tên là gì?'.",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi",
+      "hskLevel": "HSK1"
+    },
+    {
+      "id": "q003",
+      "question": "吗 (ma) được dùng để làm gì trong câu?",
+      "type": "multiple_choice",
+      "options": [
+        "Nhấn mạnh",
+        "Tạo câu hỏi Có/Không",
+        "Phủ định",
+        "Chỉ thời gian"
+      ],
+      "correctIndex": 1,
+      "explain": "吗 đặt cuối câu trần thuật để biến thành câu hỏi Có/Không.",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi",
+      "hskLevel": "HSK1"
+    },
+    {
+      "id": "q004",
+      "question": "Từ nào có nghĩa là 'Cảm ơn'?",
+      "type": "multiple_choice",
+      "options": [
+        "再见",
+        "谢谢",
+        "高兴",
+        "名字"
+      ],
+      "correctIndex": 1,
+      "explain": "谢谢 (xièxie) nghĩa là 'Cảm ơn'.",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi",
+      "hskLevel": "HSK1"
+    },
+    {
+      "id": "q005",
+      "question": "Câu '我叫小明' có nghĩa là gì?",
+      "type": "multiple_choice",
+      "options": [
+        "Tôi là học sinh",
+        "Tôi tên là Tiểu Minh",
+        "Tôi rất vui",
+        "Tôi tạm biệt bạn"
+      ],
+      "correctIndex": 1,
+      "explain": "我叫小明 (Wǒ jiào Xiǎomíng) nghĩa là 'Tôi tên là Tiểu Minh'.",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi",
+      "hskLevel": "HSK1"
+    }
+  ]
+}

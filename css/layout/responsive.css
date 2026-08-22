@@ -1,0 +1,17 @@
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .roadmap-grid, .testimonials-grid, .pricing-grid, .scenarios-grid, .match-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stroke-practice-box { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.6rem; }
+  .tone-visualizer-grid, .scenarios-grid, .match-grid { grid-template-columns: repeat(2, 1fr); }
+  .roadmap-grid, .testimonials-grid, .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card.featured { transform: none; }
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+  .footer-grid { grid-template-columns: 1fr; }
+}

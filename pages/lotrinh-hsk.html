@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lộ Trình HSK & Cẩm Nang Ngữ Pháp | Hán Ngữ Master</title>
+  <meta name="description" content="Khám phá lộ trình học tiếng Trung từ HSK 1 đến HSK 6 chuẩn quốc tế. Hệ thống bài học thông minh, cẩm nang ngữ pháp trọng tâm đỗ 99.4%.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav class="navbar subpage" id="navbar">
+      <div class="container nav-container">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="trangchu.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="lotrinh-hsk.html" class="nav-link active">Lộ Trình HSK</a></li>
+          <li><a href="luyen-pinyin.html" class="nav-link">Bảng Pinyin</a></li>
+          <li><a href="luyen-tu-vung.html" class="nav-link">Từ Vựng & Hanzi</a></li>
+          <li><a href="ai-tutor.html" class="nav-link">AI Speaking Tutor</a></li>
+          <li><a href="thi-hsk.html" class="nav-link">Thi Thử HSK</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+          <a href="#" class="btn btn-primary" data-modal="trialModal">
+            <i class="fas fa-sparkles"></i> Học Thử Miễn Phí
+          </a>
+          <button class="mobile-menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+        <button id="closeMobileDrawerBtn" style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+      </div>
+
+      <ul class="mobile-drawer-links">
+        <li><a href="trangchu.html" class="mobile-drawer-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+        <li><a href="lotrinh-hsk.html" class="mobile-drawer-link active"><i class="fas fa-graduation-cap"></i> Lộ Trình HSK</a></li>
+        <li><a href="luyen-pinyin.html" class="mobile-drawer-link"><i class="fas fa-music"></i> Bảng Pinyin</a></li>
+        <li><a href="luyen-tu-vung.html" class="mobile-drawer-link"><i class="fas fa-book"></i> Từ Vựng & Hanzi</a></li>
+        <li><a href="ai-tutor.html" class="mobile-drawer-link"><i class="fas fa-robot"></i> AI Speaking Tutor</a></li>
+        <li><a href="thi-hsk.html" class="mobile-drawer-link"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANNER -->
+    <section class="page-header-banner text-center">
+      <div class="container">
+        <span class="section-tag"><i class="fas fa-graduation-cap"></i> Khung Chuẩn Quốc Tế HSK 3.0</span>
+        <h1 class="section-title">Lộ Trình Học & <span class="gradient-text">Kho Khóa Học HSK</span></h1>
+        <p class="section-desc">
+          Chinh phục từng mốc điểm HSK với phương pháp lộ trình cá nhân hóa và cẩm nang ngữ pháp trọng tâm.
+        </p>
+      </div>
+    </section>
+
+    <!-- COURSE CATALOG -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">Tất Cả Khóa Học</button>
+          <button class="filter-btn" data-filter="hsk12">HSK 1 - 2 (Sơ Cấp)</button>
+          <button class="filter-btn" data-filter="hsk34">HSK 3 - 4 (Trung Cấp)</button>
+          <button class="filter-btn" data-filter="hsk56">HSK 5 - 6 (Cao Cấp)</button>
+          <button class="filter-btn" data-filter="business">Tiếng Trung Thương Mại</button>
+        </div>
+
+        <div class="roadmap-grid">
+          
+          <div class="course-card roadmap-card" data-level="hsk12">
+            <div class="hsk-level-tag">HSK 1 - 2 • NHẬP MÔN</div>
+            <h3 class="roadmap-title">Khóa Nhập Môn Pinyin & Giao Tiếp Nhập Vai</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Dành cho người mới bắt đầu từ con số 0. Làm quen bảng phiên âm Pinyin, 300 từ vựng cơ bản và ghép câu phản xạ ngay.
+            </p>
+            <ul class="roadmap-stats-list">
+              <li><i class="fas fa-book"></i> 40 Bài học tương tác AI</li>
+              <li><i class="fas fa-font"></i> 300 Từ vựng cốt lõi + 40 Nét chữ Hán</li>
+              <li><i class="fas fa-clock"></i> 30 Giờ học linh hoạt</li>
+            </ul>
+            <a href="#" class="btn btn-primary" style="width: 100%;" data-modal="trialModal">Bắt Đầu Học Miễn Phí</a>
+            <a href="lesson.html?id=hsk1-lesson-01" class="btn btn-secondary" style="width: 100%; margin-top: 0.6rem;"><i class="fas fa-eye"></i> Xem Bài Học Mẫu: Chào Hỏi</a>
+          </div>
+
+          <div class="course-card roadmap-card" data-level="hsk34" style="border-color: var(--primary-crimson);">
+            <div class="hsk-level-tag" style="color: var(--primary-crimson);">HSK 3 - 4 • TRUNG CẤP (PHỔ BIẾN)</div>
+            <h3 class="roadmap-title">Khóa Chinh Phục HSK 4 & Khẩu Ngữ HSKK</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Dành cho học viên đã có nền tảng. Mở rộng 1,200 từ vựng, tự tin giao tiếp phỏng vấn, đi làm công ty Trung Quốc.
+            </p>
+            <ul class="roadmap-stats-list">
+              <li><i class="fas fa-book"></i> 75 Bài học chuyên sâu</li>
+              <li><i class="fas fa-font"></i> 1,200 Từ vựng HSK 4 + 30 Đề thi thử</li>
+              <li><i class="fas fa-clock"></i> 60 Giờ luyện phản xạ</li>
+            </ul>
+            <a href="#" class="btn btn-gold" style="width: 100%;" data-modal="trialModal">Đăng Ký Khóa Pro</a>
+          </div>
+
+          <div class="course-card roadmap-card" data-level="hsk56">
+            <div class="hsk-level-tag">HSK 5 - 6 • CAO CẤP</div>
+            <h3 class="roadmap-title">Khóa Chuyên Sâu HSK 6 & Du Học CSC</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Đọc hiểu báo chí, xem phim không vietsub, viết luận văn và săn học bổng du học sinh Trung Quốc.
+            </p>
+            <ul class="roadmap-stats-list">
+              <li><i class="fas fa-book"></i> 120 Bài giảng cao cấp</li>
+              <li><i class="fas fa-font"></i> 2,500+ Từ vựng & Thành ngữ (成语)</li>
+              <li><i class="fas fa-clock"></i> 90 Giờ học cá nhân hóa</li>
+            </ul>
+            <a href="#" class="btn btn-secondary" style="width: 100%;" data-modal="trialModal">Tư Vấn Học Bổng</a>
+          </div>
+
+          <div class="course-card roadmap-card" data-level="business">
+            <div class="hsk-level-tag" style="color: var(--accent-cyan);">THƯƠNG MẠI • BUSINESS</div>
+            <h3 class="roadmap-title">Tiếng Trung Dành Cho Doanh Nhân & Đàm Phán</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Tập trung từ vựng xuất nhập khẩu, kỹ năng viết Email hợp tác, đi hội chợ Quảng Châu (Canton Fair) và đàm phán giá.
+            </p>
+            <ul class="roadmap-stats-list">
+              <li><i class="fas fa-briefcase"></i> 50 Kịch bản đàm phán thực tế</li>
+              <li><i class="fas fa-file-contract"></i> Mẫu hợp đồng thương mại TQ-VN</li>
+              <li><i class="fas fa-clock"></i> 45 Giờ luyện 1:1 với AI</li>
+            </ul>
+            <a href="#" class="btn btn-secondary" style="width: 100%;" data-modal="trialModal">Xem Chi Tiết Khóa Học</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL CONTENT: HSK GRAMMAR HANDBOOK -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag"><i class="fas fa-bookmark"></i> Cẩm Nang Ngữ Pháp</span>
+          <h2 class="section-title">Các Cấu Trúc <span class="gradient-text">Ngữ Pháp HSK Trọng Tâm</span></h2>
+          <p class="section-desc">Tổng hợp những mẫu câu đắt giá nhất thường xuất hiện trong bài thi HSK.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-hand-holding"></i></div>
+            <h3 class="knowledge-title">1. Cấu Trúc Câu "把" (bǎ)</h3>
+            <p class="knowledge-desc">
+              Dùng khi tác động làm thay đổi vị trí, trạng thái của tân ngữ.<br>
+              <strong>Cú pháp:</strong> Chủ ngữ + 把 + Tân ngữ + Động từ + Thành phần khác.<br>
+              <em>Ví dụ: 我把作业做完了。(Tôi đã làm xong bài tập rồi).</em>
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="knowledge-title">2. Cấu Trúc Câu Bị Động "被" (bèi)</h3>
+            <p class="knowledge-desc">
+              Dùng biểu thị ý bị động (bị/được).<br>
+              <strong>Cú pháp:</strong> Chủ ngữ + 被 + Tác nhân + Động từ.<br>
+              <em>Ví dụ: 苹果被他吃了。(Quả táo đã bị anh ấy ăn mất rồi).</em>
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3 class="knowledge-title">3. Cấu Trúc Câu So Sánh "比" (bǐ)</h3>
+            <p class="knowledge-desc">
+              Dùng để so sánh sự hơn kém giữa hai đối tượng A và B.<br>
+              <strong>Cú pháp:</strong> A + 比 + B + Tính từ.<br>
+              <em>Ví dụ: 今天比昨天冷。(Hôm nay lạnh hơn hôm qua).</em>
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-font"></i></div>
+            <h3 class="knowledge-title">4. Phân Biệt 3 Trợ Từ: 的, 地, 得</h3>
+            <p class="knowledge-desc">
+              • <strong>的</strong>: Đứng trước Danh từ (tính sở hữu/đặc điểm).<br>
+              • <strong>地</strong>: Đứng trước Động từ (mô tả cách thức hành động).<br>
+              • <strong>得</strong>: Đứng sau Động từ (bổ ngữ trình độ/kết quả).
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Hán Ngữ Master. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/home.js"></script>
+  <script src="../js/pages/vocabulary.js"></script>
+  <script src="../js/pages/ai.js"></script>
+  <script src="../js/pages/hsk.js"></script>
+  <script src="../js/pages/exam.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

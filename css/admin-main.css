@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Hán Ngữ Master — Admin stylesheet (bundle riêng, KHÔNG dùng chung với
+   main.css của site công khai — admin có sidebar riêng thay cho navbar).
+   ========================================================================== */
+
+/* Base: dùng lại đúng biến màu / font / animation của site chính để đồng bộ */
+@import url('base/variables.css');
+@import url('base/utilities.css');
+@import url('base/animations.css');
+
+/* Component dùng lại được: nút bấm, modal/toast */
+@import url('components/buttons.css');
+@import url('components/modal-toast.css');
+
+/* Riêng cho khu vực Admin */
+@import url('admin/admin-layout.css');
+@import url('admin/admin-dashboard.css');
+@import url('admin/admin-table.css');
+@import url('admin/admin-form.css');

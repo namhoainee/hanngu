@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hán Ngữ Master | Web Học Tiếng Trung Tương Tác AI & Nét Chữ 3D</title>
+    <meta name="description"
+        content="Chinh phục tiếng Trung dễ dàng với Hán Ngữ Master. Học Pinyin, luyện viết chữ Hán, hội thoại AI Tutor và lộ trình HSK 1-6 chuẩn quốc tế.">
+
+    <!-- FontAwesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        /* ===== HOMEPAGE PREMIUM ENHANCEMENTS ===== */
+
+        /* Typewriter */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.9em;
+            background: var(--primary-green);
+            margin-left: 3px;
+            vertical-align: middle;
+            border-radius: 2px;
+            animation: twBlink 0.85s step-end infinite;
+        }
+        @keyframes twBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        /* Hero char glow animation */
+        .hero-char-animate {
+            animation: charPulse 3s ease-in-out infinite;
+        }
+        @keyframes charPulse {
+            0%,100% { text-shadow: 0 0 25px rgba(16,185,129,0.4); }
+            50% { text-shadow: 0 0 55px rgba(16,185,129,0.8), 0 0 90px rgba(16,185,129,0.3); }
+        }
+
+        /* Gradient border on hero card */
+        .hero-card-3d {
+            position: relative;
+        }
+        .hero-card-3d::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(16,185,129,0.5), rgba(245,158,11,0.3), rgba(139,92,246,0.2));
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 1.2s ease both 1s;
+        }
+        .scroll-mouse {
+            width: 22px; height: 36px;
+            border: 2px solid var(--glass-border);
+            border-radius: 11px;
+            display: flex; justify-content: center;
+            padding-top: 5px;
+        }
+        .scroll-dot {
+            width: 4px; height: 7px;
+            background: var(--primary-green);
+            border-radius: 2px;
+            animation: scrollDown 1.6s ease-in-out infinite;
+        }
+        @keyframes scrollDown {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(11px); opacity: 0; }
+        }
+
+        /* Trust bar */
+        .trust-bar {
+            padding: 1.75rem 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.015);
+        }
+        .trust-bar-inner {
+            display: flex; align-items: center; justify-content: center;
+            gap: 2.5rem; flex-wrap: wrap;
+        }
+        .trust-label {
+            font-size: 0.78rem; color: var(--text-muted);
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+        }
+        .trust-item {
+            font-size: 0.875rem; font-weight: 700; color: var(--text-secondary);
+            display: flex; align-items: center; gap: 0.45rem;
+            opacity: 0.6; transition: opacity 0.2s;
+        }
+        .trust-item:hover { opacity: 1; }
+
+        /* Feature Showcase */
+        .features-showcase {
+            padding: 5.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .features-showcase::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-green), var(--accent-gold), transparent);
+        }
+        .feature-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .feature-showcase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .feature-showcase-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+        .fsc-1::before { background: linear-gradient(90deg, var(--primary-green), #10d9a0); }
+        .fsc-2::before { background: linear-gradient(90deg, var(--accent-gold), #ffd94a); }
+        .fsc-3::before { background: linear-gradient(90deg, var(--accent-purple), #a78bfa); }
+        .fsc-4::before { background: linear-gradient(90deg, var(--accent-cyan), #38bdf8); }
+        .feature-showcase-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.35), 0 0 0 1px rgba(16,185,129,0.25); border-color: transparent; }
+        .feature-showcase-card:hover::before { transform: scaleX(1); }
+        .fsc-icon {
+            width: 70px; height: 70px; border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.75rem; margin: 0 auto 1.25rem auto;
+        }
+        .fsc-icon-1 { background: rgba(16,185,129,0.15); color: var(--primary-green); box-shadow: 0 0 20px rgba(16,185,129,0.15); }
+        .fsc-icon-2 { background: rgba(245,158,11,0.15); color: var(--accent-gold); box-shadow: 0 0 20px rgba(245,158,11,0.15); }
+        .fsc-icon-3 { background: rgba(139,92,246,0.15); color: var(--accent-purple); box-shadow: 0 0 20px rgba(139,92,246,0.15); }
+        .fsc-icon-4 { background: rgba(6,182,212,0.15); color: var(--accent-cyan); box-shadow: 0 0 20px rgba(6,182,212,0.15); }
+        .feature-showcase-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.6rem; color: var(--text-main); }
+        .feature-showcase-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.1rem; }
+        .fsc-link { font-size: 0.83rem; font-weight: 700; color: var(--primary-green); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
+        .feature-showcase-card:hover .fsc-link { gap: 0.7rem; }
+
+        /* Stats showcase */
+        .stats-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+            position: relative; overflow: hidden;
+        }
+        .stats-section::before {
+            content: '学习';
+            position: absolute; font-family: var(--font-calligraphy);
+            font-size: 20rem; color: rgba(16,185,129,0.025);
+            top: 50%; left: 50%; transform: translate(-50%,-50%);
+            pointer-events: none; white-space: nowrap;
+        }
+        .stats-showcase-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+            position: relative; z-index: 1;
+        }
+        .stats-showcase-item {
+            text-align: center; padding: 2rem;
+            background: var(--bg-card); border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg); position: relative; overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .stats-showcase-item::after {
+            content: ''; position: absolute;
+            bottom: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+        }
+        .stats-showcase-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-glow); }
+        .stat-num {
+            font-size: 2.75rem; font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-gold));
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            line-height: 1; margin-bottom: 0.4rem;
+        }
+        .stat-lbl { font-size: 0.875rem; color: var(--text-secondary); font-weight: 600; }
+        .stat-ico { font-size: 1.4rem; margin-bottom: 0.6rem; opacity: 0.75; }
+
+        /* Testimonials marquee */
+        .testimonials-section-hp {
+            padding: 6rem 0;
+            position: relative; overflow: hidden;
+            background: linear-gradient(180deg, transparent, rgba(16,185,129,0.03), transparent);
+        }
+        .testimonials-section-hp::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+        }
+        .marquee-wrapper {
+            position: relative; overflow: hidden; margin-top: 3rem;
+        }
+        .marquee-wrapper::before, .marquee-wrapper::after {
+            content: ''; position: absolute; top: 0; bottom: 0; width: 130px; z-index: 2; pointer-events: none;
+        }
+        .marquee-wrapper::before { left: 0; background: linear-gradient(90deg, var(--bg-main), transparent); }
+        .marquee-wrapper::after { right: 0; background: linear-gradient(270deg, var(--bg-main), transparent); }
+        .marquee-track {
+            display: flex; gap: 1.5rem; width: max-content;
+            animation: marqueeScroll 42s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        @keyframes marqueeScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .tcard {
+            width: 330px; flex-shrink: 0;
+            background: var(--bg-card); border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg); padding: 1.6rem;
+            transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .tcard::before {
+            content: '\201C';
+            position: absolute; top: -0.2rem; right: 1rem;
+            font-size: 5rem; font-family: Georgia,serif;
+            color: rgba(16,185,129,0.1); line-height: 1;
+        }
+        .tcard:hover { border-color: rgba(16,185,129,0.3); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .tcard-stars { color: var(--accent-gold); font-size: 0.82rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+        .tcard-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.1rem; font-style: italic; }
+        .tcard-user { display: flex; align-items: center; gap: 0.7rem; }
+        .tcard-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+        .tcard-name { font-size: 0.9rem; font-weight: 800; color: var(--text-main); }
+        .tcard-meta { font-size: 0.78rem; color: var(--text-muted); }
+        .tcard-badge {
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            padding: 0.18rem 0.6rem;
+            background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25);
+            border-radius: var(--radius-full); color: var(--primary-green);
+            font-size: 0.72rem; font-weight: 700; margin-top: 0.25rem;
+        }
+
+        /* Gamified cards hover */
+        .gamified-card {
+            transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .gamified-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(16,185,129,0.3);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+        }
+
+        /* Roadmap glow overlay */
+        .roadmap-card-glow {
+            position: absolute; inset: 0; border-radius: inherit;
+            background: radial-gradient(ellipse at top left, rgba(16,185,129,0.07), transparent 65%);
+            pointer-events: none;
+        }
+
+        /* CTA section */
+        .cta-section {
+            padding: 7rem 0;
+            position: relative; overflow: hidden;
+            background: var(--bg-secondary);
+        }
+        .cta-bg {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(16,185,129,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-hanzi-bg {
+            position: absolute; font-family: var(--font-calligraphy);
+            font-size: 26rem; color: rgba(16,185,129,0.035);
+            top: 50%; left: 50%; transform: translate(-50%,-50%);
+            pointer-events: none; user-select: none;
+        }
+        .cta-box { max-width: 780px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+        .cta-box h2 { font-size: 2.8rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.1rem; letter-spacing: -0.5px; }
+        .cta-box > p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.25rem; }
+        .cta-buttons { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+        .cta-guarantee { margin-top: 1.5rem; font-size: 0.845rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
+        .cta-guarantee i { color: var(--primary-green); }
+
+        /* Footer social icons */
+        .footer-social { display: flex; gap: 0.65rem; margin-top: 1.1rem; }
+        .footer-social a {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); font-size: 0.85rem;
+            transition: all 0.25s ease;
+        }
+        .footer-social a:hover { background: var(--primary-green); color: #fff; border-color: var(--primary-green); transform: translateY(-2px); }
+
+        @media (max-width: 1024px) {
+            .feature-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .feature-showcase-grid { grid-template-columns: 1fr; }
+            .cta-box h2 { font-size: 2rem; }
+            .trust-bar-inner { gap: 1.5rem; }
+            .scroll-indicator { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="container nav-container">
+                <a href="trangchu.html" class="logo">
+                    <div class="logo-icon">龍</div>
+                    <div class="logo-text">HánNgữ<span>Master</span></div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="trangchu.html" class="nav-link active">Trang Chủ</a></li>
+                    <li><a href="lotrinh-hsk.html" class="nav-link">Lộ Trình HSK</a></li>
+                    <li><a href="luyen-pinyin.html" class="nav-link">Bảng Pinyin</a></li>
+                    <li><a href="luyen-tu-vung.html" class="nav-link">Từ Vựng & Hanzi</a></li>
+                    <li><a href="ai-tutor.html" class="nav-link">AI Speaking Tutor</a></li>
+                    <li><a href="thi-hsk.html" class="nav-link">Thi Thử HSK</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+                    <a href="#" class="btn btn-primary" data-modal="trialModal">
+                        <i class="fas fa-rocket"></i> Học Thử Miễn Phí
+                    </a>
+                    <button class="mobile-menu-btn" aria-label="Open Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE DRAWER MENU -->
+    <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div>
+            <div class="mobile-drawer-header">
+                <a href="trangchu.html" class="logo">
+                    <div class="logo-icon">龍</div>
+                    <div class="logo-text">HánNgữ<span>Master</span></div>
+                </a>
+                <button id="closeMobileDrawerBtn"
+                    style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+            </div>
+
+            <ul class="mobile-drawer-links">
+                <li><a href="trangchu.html" class="mobile-drawer-link active"><i class="fas fa-home"></i> Trang Chủ</a>
+                </li>
+                <li><a href="lotrinh-hsk.html" class="mobile-drawer-link"><i class="fas fa-graduation-cap"></i> Lộ Trình
+                        HSK</a></li>
+                <li><a href="luyen-pinyin.html" class="mobile-drawer-link"><i class="fas fa-music"></i> Bảng Pinyin</a>
+                </li>
+                <li><a href="luyen-tu-vung.html" class="mobile-drawer-link"><i class="fas fa-book"></i> Từ Vựng &
+                        Hanzi</a></li>
+                <li><a href="ai-tutor.html" class="mobile-drawer-link"><i class="fas fa-robot"></i> AI Speaking
+                        Tutor</a></li>
+                <li><a href="thi-hsk.html" class="mobile-drawer-link"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <button class="btn btn-primary" style="width: 100%;" data-modal="trialModal">
+                <i class="fas fa-rocket"></i> Học Thử Miễn Phí
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="hero">
+            <div class="hero-glow-bg"></div>
+            <div class="hero-ambient" aria-hidden="true">
+                <div class="hero-particles" id="heroParticles"></div>
+                <span class="orb orb-1"></span>
+                <span class="orb orb-2"></span>
+                <span class="orb orb-3"></span>
+                <span class="orb orb-4"></span>
+            </div>
+            <div class="container">
+                <div class="hero-grid">
+
+                    <!-- Hero Text Left -->
+                    <div class="hero-content reveal-on-scroll">
+                        <div class="hero-badge">
+                            <i class="fas fa-certificate"></i>&nbsp;Nền Tảng Học Tiếng Trung AI #1 Việt Nam
+                        </div>
+                        <h1 class="hero-title">
+                            Chinh Phục <span class="gradient-text"><span id="typewriterText">Tiếng Trung</span><span class="typewriter-cursor"></span></span><br>Bằng Phản Xạ AI &amp; Nét Chữ 3D
+                        </h1>
+                        <p class="hero-subtitle">
+                            Phương pháp học đột phá kết hợp Trực quan hóa Pinyin, Luyện nét chữ chuẩn Thuận Bút và Trợ
+                            lý AI giao tiếp 24/7 giúp bạn nói chuẩn tự nhiên sau <strong style="color:var(--primary-green)">30 ngày</strong>.
+                        </p>
+
+                        <div class="hero-ctas">
+                            <a href="#" class="btn btn-primary" data-modal="trialModal" style="padding:1rem 2rem;font-size:1.05rem;">
+                                <i class="fas fa-play-circle"></i> Bắt Đầu Miễn Phí 7 Ngày
+                            </a>
+                            <a href="#features" class="btn btn-secondary">
+                                <i class="fas fa-magic"></i> Trải Nghiệm Demo
+                            </a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <h4>50,000+</h4>
+                                <p>Học viên thành công</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>99.4%</h4>
+                                <p>Tỷ lệ đỗ HSK 1-6</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>3,500+</h4>
+                                <p>Từ vựng có audio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Widget Right -->
+                    <div class="hero-widget-container reveal-on-scroll">
+                        <div class="hero-card-3d">
+                            <div class="hero-card-header">
+                                <span class="hsk-badge"><i class="fas fa-star"></i> Từ vựng HSK 6</span>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary);">Thẻ tương tác hôm
+                                    nay</span>
+                            </div>
+
+                            <div class="hero-card-body">
+                                <div class="hanzi-main cn-calligraphy hero-char-animate" data-speak="龍" title="Bấm để nghe phát âm">龍
+                                </div>
+                                <div class="pinyin-main">
+                                    <span>lóng</span>
+                                    <button class="audio-btn-mini" data-speak="龍" title="Phát âm">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                                <div class="meaning-main">Rồng (Biểu tượng dũng cảm & trí tuệ)</div>
+
+                                <div class="example-box">
+                                    <div class="example-cn cn-serif">龙飞凤舞</div>
+                                    <div class="example-py">lóng fēi fèng wǔ</div>
+                                    <div class="example-vi">Rồng bay phượng múa (Thư pháp nét chữ sắc sảo)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="hero-floating-tag floating-1">
+                            <i class="fas fa-check-circle" style="color: var(--accent-jade); font-size: 1.2rem;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Nhận diện AI</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Phát âm chuẩn 99%</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-floating-tag floating-2">
+                            <i class="fas fa-pen-nib" style="color: var(--accent-gold); font-size: 1.2rem;"></i>
+                            <div>
+                                <div style="font-weight: 700;">Tập viết chữ Hán</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Thuận bút từng nét</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+                <span>Cuộn xuống</span>
+            </div>
+        </section>
+
+        <!-- TRUST BAR -->
+        <div class="trust-bar">
+            <div class="container">
+                <div class="trust-bar-inner">
+                    <span class="trust-label">Được tin dùng bởi</span>
+                    <span class="trust-item"><i class="fas fa-university"></i> ĐH Ngoại Ngữ HN</span>
+                    <span class="trust-item"><i class="fas fa-building"></i> Tập đoàn FPT</span>
+                    <span class="trust-item"><i class="fas fa-briefcase"></i> Vingroup</span>
+                    <span class="trust-item"><i class="fas fa-certificate"></i> HSK Official Partner</span>
+                    <span class="trust-item"><i class="fas fa-users"></i> 50,000+ Học viên</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEATURES SHOWCASE -->
+        <section class="features-showcase">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag"><i class="fas fa-bolt"></i> Công Cụ Học Tập</span>
+                    <h2 class="section-title">Mọi Thứ Bạn Cần Để <span class="gradient-text">Chinh Phục Tiếng Trung</span></h2>
+                    <p class="section-desc">Bộ công cụ toàn diện được thiết kế khoa học — từ phát âm, từ vựng đến luyện thi HSK chính thức.</p>
+                </div>
+                <div class="feature-showcase-grid">
+                    <a href="luyen-pinyin.html" class="feature-showcase-card fsc-1 reveal-on-scroll">
+                        <div class="fsc-icon fsc-icon-1"><i class="fas fa-music"></i></div>
+                        <h3>Bảng Pinyin Tương Tác</h3>
+                        <p>Visualizer 4 thanh điệu trực quan, bảng âm đầy đủ với audio chuẩn bản xứ.</p>
+                        <span class="fsc-link">Học ngay <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="luyen-tu-vung.html" class="feature-showcase-card fsc-2 reveal-on-scroll">
+                        <div class="fsc-icon fsc-icon-2"><i class="fas fa-pen-nib"></i></div>
+                        <h3>Tập Viết Chữ Hán</h3>
+                        <p>Canvas tập viết nét chữ theo ô mễ (米字格), luyện đúng thứ tự thuận bút chuẩn xác.</p>
+                        <span class="fsc-link">Luyện viết <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="ai-tutor.html" class="feature-showcase-card fsc-3 reveal-on-scroll">
+                        <div class="fsc-icon fsc-icon-3"><i class="fas fa-robot"></i></div>
+                        <h3>AI Speaking Tutor</h3>
+                        <p>Hội thoại 1:1 với AI 小华, phát âm được nhận diện và sửa lỗi theo thời gian thực.</p>
+                        <span class="fsc-link">Luyện nói <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="thi-hsk.html" class="feature-showcase-card fsc-4 reveal-on-scroll">
+                        <div class="fsc-icon fsc-icon-4"><i class="fas fa-stopwatch"></i></div>
+                        <h3>Thi Thử HSK Bấm Giờ</h3>
+                        <p>Đề thi chuẩn Hán Ngữ Thủy Bình Khảo Thí, đồng hồ đếm ngược, chấm điểm tự động.</p>
+                        <span class="fsc-link">Thi ngay <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-showcase-grid">
+                    <div class="stats-showcase-item reveal-on-scroll">
+                        <div class="stat-ico">🎓</div>
+                        <div class="stat-num">50,000+</div>
+                        <div class="stat-lbl">Học viên đã đăng ký</div>
+                    </div>
+                    <div class="stats-showcase-item reveal-on-scroll">
+                        <div class="stat-ico">🏆</div>
+                        <div class="stat-num">99.4%</div>
+                        <div class="stat-lbl">Tỷ lệ đỗ HSK</div>
+                    </div>
+                    <div class="stats-showcase-item reveal-on-scroll">
+                        <div class="stat-ico">📚</div>
+                        <div class="stat-num">3,500+</div>
+                        <div class="stat-lbl">Từ vựng có audio</div>
+                    </div>
+                    <div class="stats-showcase-item reveal-on-scroll">
+                        <div class="stat-ico">⭐</div>
+                        <div class="stat-num">4.9/5</div>
+                        <div class="stat-lbl">Đánh giá trung bình</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURE HUB -->
+        <section class="feature-hub" id="features">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-tag"><i class="fas fa-flask"></i> Phòng Thử Nghiệm Tương Tác</span>
+                    <h2 class="section-title">Trải Nghiệm <span class="gradient-text">Công Nghệ Học</span> Đột Phá</h2>
+                    <p class="section-desc">
+                        Không còn học vẹt thụ động! Hãy dùng thử các công cụ tương tác trực tiếp ngay bên dưới.
+                    </p>
+                </div>
+
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="tab-pinyin">
+                        <i class="fas fa-music"></i> Visualizer Thanh Điệu
+                    </button>
+                    <button class="tab-btn" data-tab="tab-stroke">
+                        <i class="fas fa-paint-brush"></i> Tập Viết Chữ Hán
+                    </button>
+                    <button class="tab-btn" data-tab="tab-ai">
+                        <i class="fas fa-robot"></i> Luyện Nói Với AI
+                    </button>
+                    <button class="tab-btn" data-tab="tab-flashcard">
+                        <i class="fas fa-layer-group"></i> Flashcard 3D
+                    </button>
+                </div>
+
+                <!-- Tab 1: Pinyin Visualizer -->
+                <div class="tab-content active" id="tab-pinyin">
+                    <div class="tone-visualizer-grid">
+                        <div class="tone-card" id="toneCard1" onclick="playToneDemo(1, 'ā', 'ā')">
+                            <div class="tone-number">Thanh 1 (Âm Ngang)</div>
+                            <div class="tone-pinyin">ā</div>
+                            <div class="tone-name">Cao và Giữ Ngang (5-5)</div>
+                            <svg class="tone-wave-svg" viewBox="0 0 100 40">
+                                <path class="tone-wave-path" d="M 10 15 L 90 15" />
+                            </svg>
+                            <button class="btn btn-secondary"
+                                style="margin-top: 1rem; width: 100%; font-size: 0.85rem;">
+                                <i class="fas fa-volume-up"></i> Nghe Mẫu (ā)
+                            </button>
+                        </div>
+
+                        <div class="tone-card" id="toneCard2" onclick="playToneDemo(2, 'á', 'á')">
+                            <div class="tone-number">Thanh 2 (Âm Sắc)</div>
+                            <div class="tone-pinyin">á</div>
+                            <div class="tone-name">Vuốt Lên Cao (3-5)</div>
+                            <svg class="tone-wave-svg" viewBox="0 0 100 40">
+                                <path class="tone-wave-path" d="M 10 32 L 90 8" />
+                            </svg>
+                            <button class="btn btn-secondary"
+                                style="margin-top: 1rem; width: 100%; font-size: 0.85rem;">
+                                <i class="fas fa-volume-up"></i> Nghe Mẫu (á)
+                            </button>
+                        </div>
+
+                        <div class="tone-card" id="toneCard3" onclick="playToneDemo(3, 'ǎ', 'ǎ')">
+                            <div class="tone-number">Thanh 3 (Âm Hỏi)</div>
+                            <div class="tone-pinyin">ǎ</div>
+                            <div class="tone-name">Xuống Thấp Rồi Lên (2-1-4)</div>
+                            <svg class="tone-wave-svg" viewBox="0 0 100 40">
+                                <path class="tone-wave-path" d="M 10 15 Q 50 38 90 10" />
+                            </svg>
+                            <button class="btn btn-secondary"
+                                style="margin-top: 1rem; width: 100%; font-size: 0.85rem;">
+                                <i class="fas fa-volume-up"></i> Nghe Mẫu (ǎ)
+                            </button>
+                        </div>
+
+                        <div class="tone-card" id="toneCard4" onclick="playToneDemo(4, 'à', 'à')">
+                            <div class="tone-number">Thanh 4 (Âm Huyền)</div>
+                            <div class="tone-pinyin">à</div>
+                            <div class="tone-name">Dứt Khoát Trôi Xuống (5-1)</div>
+                            <svg class="tone-wave-svg" viewBox="0 0 100 40">
+                                <path class="tone-wave-path" d="M 10 8 L 90 32" />
+                            </svg>
+                            <button class="btn btn-secondary"
+                                style="margin-top: 1rem; width: 100%; font-size: 0.85rem;">
+                                <i class="fas fa-volume-up"></i> Nghe Mẫu (à)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 2rem;">
+                        <a href="luyen-pinyin.html" class="btn btn-primary"><i class="fas fa-table"></i> Bảng Pinyin
+                            Toàn Tập & Quy Tắc Biến Điệu</a>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Stroke Canvas -->
+                <div class="tab-content" id="tab-stroke">
+                    <div class="stroke-practice-box">
+                        <div class="text-left">
+                            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Luyện Nét Chữ Trực
+                                Tiếp</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem;">
+                                Dùng chuột hoặc ngón tay để vẽ đè lên ô mễ (米字格).
+                            </p>
+
+                            <!-- Color Toolbar -->
+                            <div class="canvas-toolbar">
+                                <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);">Màu
+                                    nét:</span>
+                                <div class="color-picker">
+                                    <button class="color-btn active" data-color="#E63946"
+                                        style="background: #E63946;"></button>
+                                    <button class="color-btn" data-color="#FFB703"
+                                        style="background: #FFB703;"></button>
+                                    <button class="color-btn" data-color="#10B981"
+                                        style="background: #10B981;"></button>
+                                    <button class="color-btn" data-color="#FFFFFF"
+                                        style="background: #FFFFFF;"></button>
+                                </div>
+                            </div>
+
+                            <div class="character-selector">
+                                <button class="char-btn active" data-char="学">学</button>
+                                <button class="char-btn" data-char="福">福</button>
+                                <button class="char-btn" data-char="爱">爱</button>
+                                <button class="char-btn" data-char="龙">龙</button>
+                            </div>
+
+                            <div class="stroke-controls">
+                                <button class="btn btn-secondary" id="undoCanvasBtn"><i class="fas fa-undo"></i> Hoàn
+                                    Nét</button>
+                                <button class="btn btn-secondary" id="clearCanvasBtn"><i class="fas fa-eraser"></i> Xóa
+                                    Nét</button>
+                                <button class="btn btn-primary" data-speak="学"><i class="fas fa-volume-up"></i> Phát
+                                    Âm</button>
+                            </div>
+                        </div>
+
+                        <div class="canvas-wrapper">
+                            <svg class="grid-lines" viewBox="0 0 290 290">
+                                <line x1="0" y1="145" x2="290" y2="145" />
+                                <line x1="145" y1="0" x2="145" y2="290" />
+                                <line x1="0" y1="0" x2="290" y2="290" />
+                                <line x1="290" y1="0" x2="0" y2="290" />
+                            </svg>
+                            <div id="guideCharacter"
+                                style="position: absolute; font-size: 11.5rem; color: rgba(255,255,255,0.08); font-family: var(--font-calligraphy); user-select: none; pointer-events: none;">
+                                学</div>
+                            <canvas id="hanziCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 2rem;">
+                        <a href="luyen-tu-vung.html" class="btn btn-primary"><i class="fas fa-book"></i> Tra Cứu Từ Vựng
+                            & 214 Bộ Thủ Chữ Hán</a>
+                    </div>
+                </div>
+
+                <!-- Tab 3: AI Chat -->
+                <div class="tab-content" id="tab-ai">
+                    <div class="ai-tutor-box">
+                        <div class="chat-header">
+                            <div class="tutor-info">
+                                <div class="tutor-avatar"><i class="fas fa-robot"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1rem; font-weight: 800;">AI Tutor - 小华 (Xiǎo Huá)</h4>
+                                    <div style="font-size: 0.8rem; color: var(--text-secondary);">
+                                        <span class="status-dot"></span> Đang hoạt động • Phản hồi giọng bản xứ
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="hsk-badge"
+                                style="background: rgba(16,185,129,0.2); color: var(--accent-jade);">Giao tiếp
+                                1:1</span>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-bubble ai">
+                                <p class="bubble-py">Nǐ hǎo! Wǒ shì nǐ de zhōngwén lǎoshī.</p>
+                                <p><strong>你好！我是你的中文老师。</strong> <button class="audio-btn-mini"
+                                        onclick="speakChinese('你好！我是你的中文老师。')"><i class="fas fa-volume-up"></i></button>
+                                </p>
+                                <p class="example-vi" style="margin-top: 0.3rem; font-size: 0.8rem;">Xin chào! Tôi là
+                                    giáo viên tiếng Trung của bạn.</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Suggestion Chips -->
+                        <div class="quick-chips-wrapper">
+                            <span class="quick-chip">你好！很高兴认识你。</span>
+                            <span class="quick-chip">我想学习中文。</span>
+                            <span class="quick-chip">今天天气怎么样？</span>
+                        </div>
+
+                        <div class="chat-input-area">
+                            <input type="text" class="chat-input" id="chatInput"
+                                placeholder="Nhập câu bằng tiếng Trung hoặc Pinyin (VD: 你好 / Ni hao)...">
+                            <button class="btn btn-secondary" id="micSimBtn" title="Giả lập thu âm nói"><i
+                                    class="fas fa-microphone"></i></button>
+                            <button class="btn btn-primary" id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 2rem;">
+                        <a href="ai-tutor.html" class="btn btn-primary"><i class="fas fa-comments"></i> Đến Phòng AI
+                            Speaking Tutor Full Kịch Bản</a>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Flashcards -->
+                <div class="tab-content" id="tab-flashcard">
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard-3d" id="flashcard3d">
+                            <div class="flashcard-face flashcard-front">
+                                <div class="hsk-badge" id="cardLevelBadge"
+                                    style="position: absolute; top: 1.5rem; left: 1.5rem;">HSK 1</div>
+                                <div
+                                    style="font-size: 0.85rem; color: var(--text-muted); position: absolute; top: 1.5rem; right: 1.5rem;">
+                                    Bấm để lật thẻ 🔄</div>
+                                <div class="hanzi-main cn-serif" id="cardFrontHanzi">学习</div>
+                                <div class="pinyin-main">
+                                    <span id="cardFrontPinyin">xué xí</span>
+                                    <button class="audio-btn-mini" id="cardAudioBtn" data-speak="学习">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flashcard-face flashcard-back">
+                                <h4 style="font-size: 1.5rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 0.5rem;"
+                                    id="cardBackMeaning">Học tập, nghiên cứu</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem;" id="cardBackExample">Ví dụ:
+                                    我喜欢学习中文。</p>
+                                <span class="btn btn-secondary" style="margin-top: 1.5rem; font-size: 0.85rem;">Lặp lại
+                                    ngắt quãng (Spaced Repetition)</span>
+                            </div>
+                        </div>
+
+                        <div class="flashcard-controls">
+                            <button class="btn btn-secondary" id="prevCardBtn"><i class="fas fa-arrow-left"></i> Từ
+                                trước</button>
+                            <span id="cardCounter" style="font-weight: 800; color: var(--text-secondary);">1 / 5</span>
+                            <button class="btn btn-primary" id="nextCardBtn">Từ tiếp <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GAMIFIED LEARNING HUB -->
+        <section class="gamified-section">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-tag"><i class="fas fa-fire"></i> Hệ Thống Học Gamified</span>
+                    <h2 class="section-title">Học <span class="gradient-text">như chơi game</span> mỗi ngày</h2>
+                    <p class="section-desc">
+                        Duy trì streak, hoàn thành nhiệm vụ và mở khóa phần thưởng nhỏ để giữ động lực học tiếng Trung lâu dài.
+                    </p>
+                </div>
+
+                <div class="gamified-grid">
+                    <div class="gamified-card streak-card">
+                        <div class="streak-top">
+                            <span class="pill-chip"><i class="fas fa-fire"></i> Streak 7 ngày</span>
+                            <div class="streak-ring">
+                                <span data-streak-value>7</span>
+                                <small>ngày</small>
+                            </div>
+                        </div>
+                        <h3>Chuỗi học liên tục</h3>
+                        <p>Giữ thói quen 7 ngày liên tiếp để mở khóa thưởng XP và hộp quà mới.</p>
+                        <div class="progress-track">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <div class="stats-row">
+                            <div><strong>1,250</strong><span>XP</span></div>
+                            <div><strong>28</strong><span>Gem</span></div>
+                        </div>
+                    </div>
+
+                    <div class="gamified-card mission-card">
+                        <h3>Nhiệm vụ hôm nay</h3>
+                        <ul class="mission-list">
+                            <li>
+                                <span><i class="fas fa-headphones"></i> Nghe 3 lần phát âm</span>
+                                <button class="mission-btn">Hoàn thành</button>
+                            </li>
+                            <li>
+                                <span><i class="fas fa-pen-nib"></i> Viết 1 nét chữ Hán</span>
+                                <button class="mission-btn">Hoàn thành</button>
+                            </li>
+                            <li>
+                                <span><i class="fas fa-brain"></i> Chơi 1 quiz nhanh</span>
+                                <button class="mission-btn">Hoàn thành</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="gamified-card match-card">
+                        <h3>Mini game ghép từ</h3>
+                        <p>Chọn 2 thẻ để ghép đúng nghĩa với từ Hán.</p>
+                        <div class="mini-match-grid" id="miniMatchGrid">
+                            <button class="mini-match-tile" data-match="study">学习</button>
+                            <button class="mini-match-tile" data-match="study">Học tập</button>
+                            <button class="mini-match-tile" data-match="friend">朋友</button>
+                            <button class="mini-match-tile" data-match="friend">Bạn bè</button>
+                        </div>
+                        <p class="match-result" id="matchResult">Chọn 2 thẻ để bắt đầu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HSK ROADMAP -->
+        <section class="roadmap-section" id="roadmap">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-tag"><i class="fas fa-route"></i> Lộ Trình Tối Ưu</span>
+                    <h2 class="section-title">Lộ Trình <span class="gradient-text">HSK 1 Khởi Đầu Đến HSK 6</span> Thành
+                        Thạo</h2>
+                    <p class="section-desc">
+                        Thiết kế bài giảng chuẩn khung Châu Âu (CEFR) giúp bạn chinh phục mục tiêu đỗ HSK đứt điểm.
+                    </p>
+                </div>
+
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-glow"></div>
+                        <div class="hsk-level-tag">Giai đoạn 1 • Sơ Cấp</div>
+                        <h3 class="roadmap-title">HSK 1 - 2: Nhập Môn & Giao Tiếp Cơ Bản</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                            Thành thạo bảng phiên âm Pinyin, 300 từ vựng cốt lõi và ghép câu giao tiếp đời sống hàng
+                            ngày.
+                        </p>
+                        <ul class="roadmap-stats-list">
+                            <li><i class="fas fa-check-circle"></i> 300 Từ vựng + 50 Mẫu câu</li>
+                            <li><i class="fas fa-check-circle"></i> Chuẩn phát âm 4 thanh điệu</li>
+                            <li><i class="fas fa-check-circle"></i> Thời gian: 2 - 3 tháng</li>
+                        </ul>
+                        <a href="lotrinh-hsk.html" class="btn btn-secondary" style="width: 100%;">Xem Chi Tiết Khóa
+                            Học</a>
+                    </div>
+
+                    <div class="roadmap-card" style="border-color: var(--accent-crimson, #EF4444);">
+                        <div class="roadmap-card-glow"></div>
+                        <div class="hsk-level-tag" style="color: var(--accent-crimson, #EF4444);">Giai đoạn 2 • Trung Cấp 🔥 Hot
+                        </div>
+                        <h3 class="roadmap-title">HSK 3 - 4: Thảo Luận & Làm Việc</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                            Mở rộng vốn từ lên 1.200 từ, tự tin phỏng vấn xin việc, đi du lịch và làm việc với đối tác
+                            TQ.
+                        </p>
+                        <ul class="roadmap-stats-list">
+                            <li><i class="fas fa-check-circle"></i> 1,200 Từ vựng chuyên sâu</li>
+                            <li><i class="fas fa-check-circle"></i> Luyện thi HSKK Khẩu ngữ</li>
+                            <li><i class="fas fa-check-circle"></i> Thời gian: 4 - 6 tháng</li>
+                        </ul>
+                        <a href="lotrinh-hsk.html" class="btn btn-primary" style="width: 100%;">Đăng Ký Khóa Này</a>
+                    </div>
+
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-glow"></div>
+                        <div class="hsk-level-tag">Giai đoạn 3 • Cao Cấp</div>
+                        <h3 class="roadmap-title">HSK 5 - 6: Du Học & Thành Thạo Như Người Bản Xứ</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                            Chinh phục 2.500+ từ vựng, đọc hiểu báo chí, xem phim không vietsub và săn học bổng du học.
+                        </p>
+                        <ul class="roadmap-stats-list">
+                            <li><i class="fas fa-check-circle"></i> 2,500+ Từ vựng & Thành ngữ</li>
+                            <li><i class="fas fa-check-circle"></i> Viết luận & Biên phiên dịch</li>
+                            <li><i class="fas fa-check-circle"></i> Thời gian: 6 - 8 tháng</li>
+                        </ul>
+                        <a href="lotrinh-hsk.html" class="btn btn-secondary" style="width: 100%;">Tư Vấn Học Bổng</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials-section-hp">
+            <div class="container">
+                <div class="text-center reveal-on-scroll">
+                    <span class="section-tag"><i class="fas fa-heart"></i> Học Viên Nói Gì</span>
+                    <h2 class="section-title">Hơn <span class="gradient-text">50,000 Học Viên</span> Đã Thành Công</h2>
+                    <p class="section-desc">Câu chuyện thật từ những người đã chinh phục tiếng Trung cùng Hán Ngữ Master.</p>
+                </div>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Chỉ sau 3 tháng dùng Hán Ngữ Master, mình đã vượt qua kỳ thi HSK 3 với điểm số 285/300. AI Tutor giúp mình tự tin nói tiếng Trung hơn rất nhiều!"</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#10B981,#047857);color:#fff;">NL</div>
+                            <div><div class="tcard-name">Nguyễn Lan Anh</div><div class="tcard-meta">Sinh viên ĐH Ngoại Thương</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 3</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Tính năng tập viết nét chữ quá tuyệt! Lần đầu tiên mình thực sự hiểu thứ tự thuận bút thay vì cứ vẽ bừa. Ứng dụng thiết kế đẹp mắt, học không chán."</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;">TM</div>
+                            <div><div class="tcard-name">Trần Minh Khang</div><div class="tcard-meta">Nhân viên kế toán, 28 tuổi</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 4</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Mình dùng để ôn thi HSK 6 sau 8 năm không học tiếng Trung. Kho flashcard và đề thi thử cực kỳ sát với đề thật. Recommend mạnh!"</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED);color:#fff;">PH</div>
+                            <div><div class="tcard-name">Phạm Hoàng Yến</div><div class="tcard-meta">Phiên dịch viên tự do</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 6</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Con tôi 12 tuổi bắt đầu học được 2 tháng, giờ đã đọc được truyện tranh tiếng Trung rồi. Gamification rất thú vị với trẻ em!"</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#06B6D4,#0891B2);color:#fff;">VT</div>
+                            <div><div class="tcard-name">Vũ Thị Thu Hà</div><div class="tcard-meta">Phụ huynh học sinh, Hà Nội</div><span class="tcard-badge"><i class="fas fa-star"></i> HSK 1 — Con</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Gói VIP trọn đời xứng đáng từng đồng! 2 năm học, tài liệu liên tục cập nhật, giảng viên hỗ trợ tận tình. Chất lượng vượt trội so với các app khác."</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#EF4444,#DC2626);color:#fff;">BN</div>
+                            <div><div class="tcard-name">Bùi Ngọc Tú</div><div class="tcard-meta">Giám đốc kinh doanh, TP.HCM</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 5</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★☆</div>
+                        <p class="tcard-text">"Bảng Pinyin tương tác giải thích rõ hơn thầy giáo thật sự 😂. Cái phần visualizer thanh điệu với sóng âm thị giác hóa là tôi chưa thấy ở app nào!"</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#10B981,#0891B2);color:#fff;">DQ</div>
+                            <div><div class="tcard-name">Đỗ Quang Hưng</div><div class="tcard-meta">Kỹ sư phần mềm, Đà Nẵng</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 3</span></div>
+                        </div>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Chỉ sau 3 tháng dùng Hán Ngữ Master, mình đã vượt qua kỳ thi HSK 3 với điểm số 285/300. AI Tutor giúp mình tự tin nói tiếng Trung hơn rất nhiều!"</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#10B981,#047857);color:#fff;">NL</div>
+                            <div><div class="tcard-name">Nguyễn Lan Anh</div><div class="tcard-meta">Sinh viên ĐH Ngoại Thương</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 3</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Tính năng tập viết nét chữ quá tuyệt! Lần đầu tiên mình thực sự hiểu thứ tự thuận bút thay vì cứ vẽ bừa. Ứng dụng thiết kế đẹp mắt, học không chán."</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;">TM</div>
+                            <div><div class="tcard-name">Trần Minh Khang</div><div class="tcard-meta">Nhân viên kế toán, 28 tuổi</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 4</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Mình dùng để ôn thi HSK 6 sau 8 năm không học tiếng Trung. Kho flashcard và đề thi thử cực kỳ sát với đề thật. Recommend mạnh!"</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED);color:#fff;">PH</div>
+                            <div><div class="tcard-name">Phạm Hoàng Yến</div><div class="tcard-meta">Phiên dịch viên tự do</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 6</span></div>
+                        </div>
+                    </div>
+                    <div class="tcard">
+                        <div class="tcard-stars">★★★★★</div>
+                        <p class="tcard-text">"Gói VIP trọn đời xứng đáng từng đồng! 2 năm học, tài liệu liên tục cập nhật, giảng viên hỗ trợ tận tình. Chất lượng vượt trội so với các app khác."</p>
+                        <div class="tcard-user">
+                            <div class="tcard-avatar" style="background:linear-gradient(135deg,#EF4444,#DC2626);color:#fff;">BN</div>
+                            <div><div class="tcard-name">Bùi Ngọc Tú</div><div class="tcard-meta">Giám đốc kinh doanh, TP.HCM</div><span class="tcard-badge"><i class="fas fa-trophy"></i> Đỗ HSK 5</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINI QUIZ -->
+        <section class="quiz-section" id="quiz">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-tag"><i class="fas fa-gamepad"></i> Thử Thách Nhanh 30s</span>
+                    <h2 class="section-title">Kiểm Tra <span class="gradient-text">Trình Độ Tiếng Trung</span> Của Bạn
+                    </h2>
+                    <p class="section-desc">
+                        Trả lời 3 câu hỏi trắc nghiệm siêu tốc để đánh giá ngay tiềm năng ngôn ngữ của bạn.
+                    </p>
+                </div>
+
+                <div class="quiz-box" id="quizBox">
+                    <!-- Rendered dynamically by script.js -->
+                </div>
+
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="thi-hsk.html" class="btn btn-gold"><i class="fas fa-stopwatch"></i> Thi Thử HSK Đầy Đủ
+                        (Đồng Hồ Đếm Ngược)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-tag"><i class="fas fa-tags"></i> Gói Học Linh Hoạt</span>
+                    <h2 class="section-title">Đầu Tư Cho <span class="gradient-text">Tương Lai Ngôn Ngữ</span> Của Bạn
+                    </h2>
+                    <p class="section-desc">Chọn gói học phù hợp với mục tiêu cá nhân. Cam kết hoàn tiền 100% nếu không
+                        hài lòng sau 7 ngày.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div>
+                            <h3 style="font-size: 1.35rem; font-weight: 800;">Học Thử Miễn Phí</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Trải nghiệm cơ bản</p>
+                            <div class="price-tag">0đ <span>/ 7 ngày</span></div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Học thử 10 bài Pinyin & HSK 1</li>
+                                <li><i class="fas fa-check"></i> Canvas luyện viết chữ Hán</li>
+                                <li><i class="fas fa-check"></i> Flashcard 100 từ cơ bản</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%;" data-modal="trialModal">Bắt Đầu Học
+                            Thử</button>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">Được Chọn Nhiều Nhất</div>
+                        <div>
+                            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-crimson);">Gói Chuyên
+                                Sâu Pro</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Toàn bộ kho khóa học HSK 1 - 6
+                            </p>
+                            <div class="price-tag">199.000đ <span>/ tháng</span></div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Mở khóa toàn bộ HSK 1 đến HSK 6</li>
+                                <li><i class="fas fa-check"></i> AI Speaking Tutor không giới hạn</li>
+                                <li><i class="fas fa-check"></i> Đề thi thử HSK có chấm điểm tự động</li>
+                                <li><i class="fas fa-check"></i> Hỗ trợ sửa bài 1:1 từ giảng viên</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" data-modal="trialModal">Đăng Ký Gói
+                            Pro</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div>
+                            <h3 style="font-size: 1.35rem; font-weight: 800;">Gói Trọn Đời (VIP)</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Thanh toán 1 lần dùng mãi mãi
+                            </p>
+                            <div class="price-tag">1.490.000đ <span>/ trọn đời</span></div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Quyền truy cập trọn đời tất cả cập nhật</li>
+                                <li><i class="fas fa-check"></i> Tải kho tài liệu PDF & MP3 offline</li>
+                                <li><i class="fas fa-check"></i> Thẻ thành viên VIP CLB Tiếng Trung</li>
+                                <li><i class="fas fa-check"></i> Quà tặng sách Thuận Bút chữ Hán</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-gold" style="width: 100%;" data-modal="trialModal">Sở Hữu Trọn
+                            Đời</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="cta-bg"></div>
+            <div class="cta-hanzi-bg">龍</div>
+            <div class="container">
+                <div class="cta-box reveal-on-scroll">
+                    <div class="section-tag" style="margin-bottom:1.5rem;"><i class="fas fa-rocket"></i> Bắt Đầu Hành Trình</div>
+                    <h2>Sẵn Sàng <span class="gradient-text">Chinh Phục Tiếng Trung</span> Cùng Chúng Tôi?</h2>
+                    <p>Tham gia ngay hôm nay — hoàn toàn miễn phí trong 7 ngày đầu. Không cần thẻ tín dụng.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary" data-modal="trialModal" style="padding:1rem 2.5rem;font-size:1.1rem;">
+                            <i class="fas fa-play-circle"></i> Bắt Đầu Miễn Phí Ngay
+                        </a>
+                        <a href="lotrinh-hsk.html" class="btn btn-secondary" style="padding:1rem 2rem;">
+                            <i class="fas fa-map"></i> Xem Lộ Trình HSK
+                        </a>
+                    </div>
+                    <div class="cta-guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Cam kết hoàn tiền 100% trong 7 ngày nếu không hài lòng</span>
+                        <span style="color:var(--glass-border)">•</span>
+                        <i class="fas fa-lock"></i>
+                        <span>Bảo mật dữ liệu tuyệt đối</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="trangchu.html" class="logo">
+                        <div class="logo-icon">龍</div>
+                        <div class="logo-text">HánNgữ<span>Master</span></div>
+                    </a>
+                    <p>
+                        Nền tảng học tiếng Trung thế hệ mới kết hợp trí tuệ nhân tạo AI và phương pháp phản xạ 3D tiên
+                        tiến nhất.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Zalo"><i class="fas fa-comment-dots"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Khóa Học</h4>
+                    <ul class="footer-links">
+                        <li><a href="lotrinh-hsk.html">Tiếng Trung Sơ Cấp HSK 1-2</a></li>
+                        <li><a href="lotrinh-hsk.html">Tiếng Trung Trung Cấp HSK 3-4</a></li>
+                        <li><a href="lotrinh-hsk.html">Luyện Thi HSK 5-6 Du Học</a></li>
+                        <li><a href="lotrinh-hsk.html">Tiếng Trung Thương Mại</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Công Cụ Miễn Phí</h4>
+                    <ul class="footer-links">
+                        <li><a href="luyen-pinyin.html">Bảng Phiên Âm Pinyin Matrix</a></li>
+                        <li><a href="luyen-tu-vung.html">Tra Cứu Thuận Bút Chữ Hán</a></li>
+                        <li><a href="ai-tutor.html">Luyện Nói AI Speaking Tutor</a></li>
+                        <li><a href="thi-hsk.html">Thi Thử HSK Bấm Giờ Online</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Nhận Tài Liệu HSK</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Nhập email để nhận trọn bộ 1,000
+                        flashcard Pinyin & HSK miễn phí:</p>
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Email của bạn...">
+                        <button class="btn btn-primary" style="padding: 0.6rem 1.2rem;"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hán Ngữ Master. All rights reserved. &nbsp;|&nbsp;
+                   <a href="#" style="color:var(--text-muted);">Chính sách bảo mật</a> &nbsp;|&nbsp;
+                   <a href="#" style="color:var(--text-muted);">Điều khoản dịch vụ</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="trialModal">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <div class="text-center" style="margin-bottom: 1.5rem;">
+                <div class="logo-icon" style="margin: 0 auto 0.75rem auto;">龍</div>
+                <h3 style="font-size: 1.5rem; font-weight: 800;">Đăng Ký Học Thử Miễn Phí</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Nhận ngay 7 ngày mở khóa toàn bộ bài học AI
+                </p>
+            </div>
+
+            <form
+                onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Thông tin kích hoạt đã được gửi.'); closeModal('trialModal');">
+                <div style="margin-bottom: 1rem;">
+                    <input type="text" required
+                        style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--bg-main); border: 1px solid var(--glass-border); color: var(--text-main);"
+                        placeholder="Họ và tên">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <input type="text" required
+                        style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--bg-main); border: 1px solid var(--glass-border); color: var(--text-main);"
+                        placeholder="Email hoặc Số điện thoại">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Kích Hoạt Miễn Phí</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/home.js"></script>
+  <script src="../js/pages/vocabulary.js"></script>
+  <script src="../js/pages/ai.js"></script>
+  <script src="../js/pages/hsk.js"></script>
+  <script src="../js/pages/exam.js"></script>
+  <script src="../js/app.js"></script>
+    <script>
+        /* TYPEWRITER EFFECT */
+        (function(){
+            const words = ['Ti\u1ebfng Trung','Pinyin','Ch\u1eef H\u00e1n','HSK 6','\u6c49\u8bed'];
+            let wi=0,ci=0,del=false;
+            const el = document.getElementById('typewriterText');
+            function type(){
+                if(!el) return;
+                const w=words[wi];
+                if(del){ci--;}else{ci++;}
+                el.textContent=w.substring(0,ci);
+                let d=del?55:95;
+                if(!del&&ci===w.length){d=2200;del=true;}
+                else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=400;}
+                setTimeout(type,d);
+            }
+            setTimeout(type,1400);
+        })();
+    </script>
+</body>
+
+</html>

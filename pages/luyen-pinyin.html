@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Phiên Âm Pinyin & Quy Tắc Biến Điệu | Hán Ngữ Master</title>
+  <meta name="description" content="Học bảng phiên âm Pinyin tiếng Trung đầy đủ 400+ âm tiết. Bổ sung bí kíp biến điệu chữ 不, 一, thanh 3 và mẹo phân biệt âm chuẩn Bắc Kinh.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav class="navbar subpage" id="navbar">
+      <div class="container nav-container">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="trangchu.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="lotrinh-hsk.html" class="nav-link">Lộ Trình HSK</a></li>
+          <li><a href="luyen-pinyin.html" class="nav-link active">Bảng Pinyin</a></li>
+          <li><a href="luyen-tu-vung.html" class="nav-link">Từ Vựng & Hanzi</a></li>
+          <li><a href="ai-tutor.html" class="nav-link">AI Speaking Tutor</a></li>
+          <li><a href="thi-hsk.html" class="nav-link">Thi Thử HSK</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+          <a href="#" class="btn btn-primary" data-modal="trialModal">
+            <i class="fas fa-sparkles"></i> Học Thử Miễn Phí
+          </a>
+          <button class="mobile-menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+        <button id="closeMobileDrawerBtn" style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+      </div>
+
+      <ul class="mobile-drawer-links">
+        <li><a href="trangchu.html" class="mobile-drawer-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+        <li><a href="lotrinh-hsk.html" class="mobile-drawer-link"><i class="fas fa-graduation-cap"></i> Lộ Trình HSK</a></li>
+        <li><a href="luyen-pinyin.html" class="mobile-drawer-link active"><i class="fas fa-music"></i> Bảng Pinyin</a></li>
+        <li><a href="luyen-tu-vung.html" class="mobile-drawer-link"><i class="fas fa-book"></i> Từ Vựng & Hanzi</a></li>
+        <li><a href="ai-tutor.html" class="mobile-drawer-link"><i class="fas fa-robot"></i> AI Speaking Tutor</a></li>
+        <li><a href="thi-hsk.html" class="mobile-drawer-link"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANNER -->
+    <section class="page-header-banner text-center">
+      <div class="container">
+        <span class="section-tag"><i class="fas fa-volume-up"></i> Chuẩn Phát Âm Bắc Kinh</span>
+        <h1 class="section-title">Bảng Phiên Âm <span class="gradient-text">Pinyin & Quy Tắc Biến Điệu</span></h1>
+        <p class="section-desc">
+          Click trực tiếp vào từng ô âm tiết để nghe phát âm. Xem thêm cẩm nang bí kíp biến điệu bên dưới.
+        </p>
+      </div>
+    </section>
+
+    <!-- PINYIN MATRIX TABLE -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        
+        <div class="pinyin-matrix-container">
+          <table class="pinyin-table">
+            <thead>
+              <tr>
+                <th>Thanh mẫu \ Vận mẫu</th>
+                <th>a</th>
+                <th>o</th>
+                <th>e</th>
+                <th>i</th>
+                <th>u</th>
+                <th>ü</th>
+                <th>ai</th>
+                <th>ei</th>
+                <th>ao</th>
+                <th>ou</th>
+                <th>an</th>
+                <th>en</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row b -->
+              <tr>
+                <th>b</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bā')">ba</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bō')">bo</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bī')">bi</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bū')">bu</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bāi')">bai</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bēi')">bei</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bāo')">bao</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bān')">ban</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('bēn')">ben</button></td>
+              </tr>
+              <!-- Row p -->
+              <tr>
+                <th>p</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pā')">pa</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pō')">po</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pī')">pi</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pū')">pu</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pāi')">pai</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pēi')">pei</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pāo')">pao</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pōu')">pou</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pān')">pan</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('pēn')">pen</button></td>
+              </tr>
+              <!-- Row m -->
+              <tr>
+                <th>m</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mā')">ma</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mō')">mo</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mē')">me</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mī')">mi</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mū')">mu</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('māi')">mai</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mēi')">mei</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('māo')">mao</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mōu')">mou</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mān')">man</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('mēn')">men</button></td>
+              </tr>
+              <!-- Row f -->
+              <tr>
+                <th>f</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fā')">fa</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fō')">fo</button></td>
+                <td>-</td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fū')">fu</button></td>
+                <td>-</td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fēi')">fei</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fōu')">fou</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fān')">fan</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('fēn')">fen</button></td>
+              </tr>
+              <!-- Row d -->
+              <tr>
+                <th>d</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dā')">da</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dē')">de</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dī')">di</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dū')">du</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dāi')">dai</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dēi')">dei</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dāo')">dao</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dōu')">dou</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dān')">dan</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('dēn')">den</button></td>
+              </tr>
+              <!-- Row t -->
+              <tr>
+                <th>t</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tā')">ta</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tē')">te</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tī')">ti</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tū')">tu</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tāi')">tai</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tāo')">tao</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tōu')">tou</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('tān')">tan</button></td>
+                <td>-</td>
+              </tr>
+              <!-- Row zh -->
+              <tr>
+                <th>zh</th>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhā')">zha</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhē')">zhe</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhī')">zhi</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhū')">zhu</button></td>
+                <td>-</td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhāi')">zhai</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhēi')">zhei</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhāo')">zhao</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhōu')">zhou</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhān')">zhan</button></td>
+                <td><button class="pinyin-cell-btn" onclick="speakChinese('zhēn')">zhen</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL CONTENT: TONE SANDHI & PRONUNCIATION RULES -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag"><i class="fas fa-lightbulb"></i> Bí Kíp Phát Âm</span>
+          <h2 class="section-title">Quy Tắc Biến Điệu & <span class="gradient-text">Mẹo Đọc Chuẩn</span></h2>
+          <p class="section-desc">Nắm vững các quy tắc biến âm cốt lõi để nói tiếng Trung tự nhiên như người bản xứ.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-exchange-alt"></i></div>
+            <h3 class="knowledge-title">1. Biến Điệu Của Chữ "不" (bù)</h3>
+            <p class="knowledge-desc">
+              • Bản chất chữ <strong>不</strong> mang Thanh 4 (bù).<br>
+              • Khi đứng trước một từ mang <strong>Thanh 4</strong>, <strong>不</strong> sẽ chuyển thành <strong>Thanh 2 (bú)</strong>.<br>
+              <em>Ví dụ: 不是 (bú shì), 不要 (bú yào).</em>
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-sort-numeric-up-alt"></i></div>
+            <h3 class="knowledge-title">2. Biến Điệu Của Chữ "一" (yī)</h3>
+            <p class="knowledge-desc">
+              • Đứng trước từ Thanh 4: đọc thành <strong>Thanh 2 (yí)</strong>. <em>Ví dụ: 一样 (yí yàng).</em><br>
+              • Đứng trước từ Thanh 1, 2, 3: đọc thành <strong>Thanh 4 (yì)</strong>. <em>Ví dụ: 一起 (yì qǐ).</em>
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-wave-square"></i></div>
+            <h3 class="knowledge-title">3. Quy Tắc Biến Điệu Hai Thanh 3 (3 - 3)</h3>
+            <p class="knowledge-desc">
+              Khi hai âm mang Thanh 3 đi liền nhau (3 + 3), thanh 3 đầu tiên biến thành <strong>Thanh 2</strong>.<br>
+              <em>Ví dụ: 你好 (Nǐ hǎo → Ní hǎo), 手表 (Shǒu biǎo → Shóu biǎo).</em>
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-headset"></i></div>
+            <h3 class="knowledge-title">4. Phân Biệt Âm Đầu Lửa (z, c, s) & Uốn Lưỡi (zh, ch, sh)</h3>
+            <p class="knowledge-desc">
+              • <strong>z, c, s</strong>: Đầu lưỡi thẳng chạm mặt sau răng trên.<br>
+              • <strong>zh, ch, sh, r</strong>: Cần uốn nhẹ vòm lưỡi lên ngạc cứng trước khi phát âm.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Hán Ngữ Master. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/home.js"></script>
+  <script src="../js/pages/vocabulary.js"></script>
+  <script src="../js/pages/ai.js"></script>
+  <script src="../js/pages/hsk.js"></script>
+  <script src="../js/pages/exam.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

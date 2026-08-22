@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Speaking Tutor 1:1 & Khẩu Ngữ Bản Xứ | Hán Ngữ Master</title>
+  <meta name="description" content="Luyện phản xạ giao tiếp tiếng Trung 24/7 với AI Tutor thông minh. Tự động sửa lỗi phát âm, ngữ pháp và học khẩu ngữ người bản xứ.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav class="navbar subpage" id="navbar">
+      <div class="container nav-container">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="trangchu.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="lotrinh-hsk.html" class="nav-link">Lộ Trình HSK</a></li>
+          <li><a href="luyen-pinyin.html" class="nav-link">Bảng Pinyin</a></li>
+          <li><a href="luyen-tu-vung.html" class="nav-link">Từ Vựng & Hanzi</a></li>
+          <li><a href="ai-tutor.html" class="nav-link active">AI Speaking Tutor</a></li>
+          <li><a href="thi-hsk.html" class="nav-link">Thi Thử HSK</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+          <a href="#" class="btn btn-primary" data-modal="trialModal">
+            <i class="fas fa-sparkles"></i> Học Thử Miễn Phí
+          </a>
+          <button class="mobile-menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+        <button id="closeMobileDrawerBtn" style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+      </div>
+
+      <ul class="mobile-drawer-links">
+        <li><a href="trangchu.html" class="mobile-drawer-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+        <li><a href="lotrinh-hsk.html" class="mobile-drawer-link"><i class="fas fa-graduation-cap"></i> Lộ Trình HSK</a></li>
+        <li><a href="luyen-pinyin.html" class="mobile-drawer-link"><i class="fas fa-music"></i> Bảng Pinyin</a></li>
+        <li><a href="luyen-tu-vung.html" class="mobile-drawer-link"><i class="fas fa-book"></i> Từ Vựng & Hanzi</a></li>
+        <li><a href="ai-tutor.html" class="mobile-drawer-link active"><i class="fas fa-robot"></i> AI Speaking Tutor</a></li>
+        <li><a href="thi-hsk.html" class="mobile-drawer-link"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANNER -->
+    <section class="page-header-banner text-center">
+      <div class="container">
+        <span class="section-tag"><i class="fas fa-robot"></i> Trợ Lý Ảo Thông Minh</span>
+        <h1 class="section-title">Phòng Luyện Nói 1:1 Với <span class="gradient-text">AI Tutor</span></h1>
+        <p class="section-desc">
+          Chọn kịch bản hội thoại thực tế bên dưới để bắt đầu luyện phản xạ giao tiếp với AI.
+        </p>
+      </div>
+    </section>
+
+    <!-- SCENARIOS & CHAT STUDIO -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        
+        <div class="scenarios-grid">
+          <div class="scenario-card active" data-scenario="restaurant">
+            <div class="scenario-icon"><i class="fas fa-utensils"></i></div>
+            <h4 style="font-weight: 800;">Nhà Hàng Trung Hoa</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Gọi món, hỏi giá & thanh toán</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="interview">
+            <div class="scenario-icon"><i class="fas fa-user-tie"></i></div>
+            <h4 style="font-weight: 800;">Phỏng Vấn Xin Việc</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Giới thiệu bản thân & kinh nghiệm</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="travel">
+            <div class="scenario-icon"><i class="fas fa-plane-departure"></i></div>
+            <h4 style="font-weight: 800;">Du Lịch Thượng Hải</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Hỏi đường, đi lại & đặt phòng</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="shopping">
+            <div class="scenario-icon"><i class="fas fa-shopping-bag"></i></div>
+            <h4 style="font-weight: 800;">Mua Sắm & Mặc Cả</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Hỏi kích cỡ, thử đồ & giảm giá</p>
+          </div>
+        </div>
+
+        <div class="ai-tutor-box">
+          <div class="chat-header">
+            <div class="tutor-info">
+              <div class="tutor-avatar"><i class="fas fa-robot"></i></div>
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 800;">AI Tutor - 小华 (Xiǎo Huá)</h4>
+                <div style="font-size: 0.8rem; color: var(--text-secondary);">
+                  <span class="status-dot"></span> Sẵn sàng hội thoại • Giọng chuẩn Bắc Kinh
+                </div>
+              </div>
+            </div>
+            <span class="hsk-badge" style="background: rgba(16,185,129,0.2); color: var(--accent-jade);">Kịch bản Nhà hàng</span>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble ai">
+              <p class="bubble-py">Huānyíng guānglín! Qǐngwèn nǐ xiǎng chī diǎn shénme?</p>
+              <p><strong>欢迎光临！请问您想吃点什么？</strong> <button class="audio-btn-mini" onclick="speakChinese('欢迎光临！请问您想吃点什么？')"><i class="fas fa-volume-up"></i></button></p>
+              <p class="example-vi" style="margin-top: 0.3rem; font-size: 0.8rem;">Chào mừng quý khách! Cho hỏi bạn muốn ăn gì nào?</p>
+            </div>
+          </div>
+
+          <!-- Quick Chips -->
+          <div class="quick-chips-wrapper">
+            <span class="quick-chip">我想吃北京烤鸭 (Tôi muốn ăn vịt quay)</span>
+            <span class="quick-chip">请问多少钱？(Cho hỏi bao nhiêu tiền?)</span>
+            <span class="quick-chip">不要太辣 (Đừng làm cay quá)</span>
+          </div>
+
+          <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Nhập câu trả lời bằng tiếng Trung hoặc Pinyin (VD: 我想吃烤鸭)...">
+            <button class="btn btn-secondary" id="micSimBtn" title="Giả lập thu âm nói"><i class="fas fa-microphone"></i></button>
+            <button class="btn btn-primary" id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL CONTENT: NATIVE IDIOMS & PHRASES -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag"><i class="fas fa-comments"></i> Khẩu Ngữ Tự Nhiên</span>
+          <h2 class="section-title">Góc Khẩu Ngữ <span class="gradient-text">Người Bản Xứ Hay Dùng</span></h2>
+          <p class="section-desc">Học các mẫu câu cửa miệng giúp bạn nói tiếng Trung chuẩn như người Bắc Kinh.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          
+          <div class="knowledge-card">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--accent-gold);" class="cn-serif">1. 没问题 (méi wèntí)</div>
+            <h3 class="knowledge-title" style="margin-top: 0.5rem;">Không thành vấn đề!</h3>
+            <p class="knowledge-desc">Dùng khi sếp hoặc bạn bè nhờ vả và bạn vui vẻ đồng ý ngay lập tức.</p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--accent-gold);" class="cn-serif">2. 随你的便 (suí nǐ de biàn)</div>
+            <h3 class="knowledge-title" style="margin-top: 0.5rem;">Tùy bạn đấy!</h3>
+            <p class="knowledge-desc">Dùng khi thoải mái nhường quyền quyết định cho đối phương (ăn gì, đi đâu cũng được).</p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--accent-gold);" class="cn-serif">3. 放心吧 (fàngxīn ba)</div>
+            <h3 class="knowledge-title" style="margin-top: 0.5rem;">Yên tâm đi!</h3>
+            <p class="knowledge-desc">Dùng để trấn an người khác rằng mọi việc đã được bạn thu xếp chu toàn.</p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 1.8rem; font-weight: 900; color: var(--accent-gold);" class="cn-serif">4. 太棒了 (tài bàng le)</div>
+            <h3 class="knowledge-title" style="margin-top: 0.5rem;">Tuyệt vời quá!</h3>
+            <p class="knowledge-desc">Dùng để khen ngợi thành tích hoặc tin vui của người đối diện.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Hán Ngữ Master. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/home.js"></script>
+  <script src="../js/pages/vocabulary.js"></script>
+  <script src="../js/pages/ai.js"></script>
+  <script src="../js/pages/hsk.js"></script>
+  <script src="../js/pages/exam.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

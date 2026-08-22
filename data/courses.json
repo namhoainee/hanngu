@@ -1,0 +1,46 @@
+{
+  "courses": [
+    {
+      "id": "hsk1",
+      "name": "HSK 1",
+      "level": 1,
+      "totalLessons": 1,
+      "description": "Sơ cấp - làm quen phát âm và giao tiếp cơ bản."
+    },
+    {
+      "id": "hsk2",
+      "name": "HSK 2",
+      "level": 2,
+      "totalLessons": 0,
+      "description": "Mở rộng giao tiếp hàng ngày."
+    },
+    {
+      "id": "hsk3",
+      "name": "HSK 3",
+      "level": 3,
+      "totalLessons": 0,
+      "description": "Giao tiếp trong học tập, công việc, du lịch."
+    },
+    {
+      "id": "hsk4",
+      "name": "HSK 4",
+      "level": 4,
+      "totalLessons": 0,
+      "description": "Trao đổi tương đối trôi chảy về nhiều chủ đề."
+    },
+    {
+      "id": "hsk5",
+      "name": "HSK 5",
+      "level": 5,
+      "totalLessons": 0,
+      "description": "Đọc báo, xem phim, thuyết trình cơ bản."
+    },
+    {
+      "id": "hsk6",
+      "name": "HSK 6",
+      "level": 6,
+      "totalLessons": 0,
+      "description": "Gần như thành thạo, viết luận và tranh biện."
+    }
+  ]
+}

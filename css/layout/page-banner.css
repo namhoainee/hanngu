@@ -1,0 +1,9 @@
+/* Subpage Banner */
+.page-header-banner {
+  padding-top: 8.5rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, var(--bg-main) 100%);
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}

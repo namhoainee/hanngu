@@ -1,0 +1,5 @@
+/* Trang xem chi tiết bài học (pages/lesson.html).
+   Phần lớn tái sử dụng class có sẵn: vocab-card, knowledge-card, chat-bubble,
+   flashcard-3d, quiz-box... Chỉ thêm chỉnh nhỏ riêng cho trang này ở đây. */
+
+#lessonDialogueMessages { overflow-y: visible; }

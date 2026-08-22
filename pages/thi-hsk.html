@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trung Tâm Thi Thử HSK Online & Mẹo Thi | Hán Ngữ Master</title>
+  <meta name="description" content="Thi thử HSK 1 - HSK 6 online miễn phí. Đề thi mô phỏng chuẩn cấu trúc Hanban, đồng hồ đếm ngược và cẩm nang chiến thuật đạt điểm cao.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav class="navbar subpage" id="navbar">
+      <div class="container nav-container">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="trangchu.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="lotrinh-hsk.html" class="nav-link">Lộ Trình HSK</a></li>
+          <li><a href="luyen-pinyin.html" class="nav-link">Bảng Pinyin</a></li>
+          <li><a href="luyen-tu-vung.html" class="nav-link">Từ Vựng & Hanzi</a></li>
+          <li><a href="ai-tutor.html" class="nav-link">AI Speaking Tutor</a></li>
+          <li><a href="thi-hsk.html" class="nav-link active">Thi Thử HSK</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+          <a href="#" class="btn btn-primary" data-modal="trialModal">
+            <i class="fas fa-sparkles"></i> Học Thử Miễn Phí
+          </a>
+          <button class="mobile-menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+        <button id="closeMobileDrawerBtn" style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+      </div>
+
+      <ul class="mobile-drawer-links">
+        <li><a href="trangchu.html" class="mobile-drawer-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+        <li><a href="lotrinh-hsk.html" class="mobile-drawer-link"><i class="fas fa-graduation-cap"></i> Lộ Trình HSK</a></li>
+        <li><a href="luyen-pinyin.html" class="mobile-drawer-link"><i class="fas fa-music"></i> Bảng Pinyin</a></li>
+        <li><a href="luyen-tu-vung.html" class="mobile-drawer-link"><i class="fas fa-book"></i> Từ Vựng & Hanzi</a></li>
+        <li><a href="ai-tutor.html" class="mobile-drawer-link"><i class="fas fa-robot"></i> AI Speaking Tutor</a></li>
+        <li><a href="thi-hsk.html" class="mobile-drawer-link active"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANNER -->
+    <section class="page-header-banner text-center">
+      <div class="container">
+        <span class="section-tag"><i class="fas fa-stopwatch"></i> Đề Thi Mô Phỏng Chuẩn Hanban</span>
+        <h1 class="section-title">Trung Tâm <span class="gradient-text">Thi Thử HSK Online</span></h1>
+        <p class="section-desc">
+          Thực hành làm đề thi thử bấm giờ đếm ngược real-time và nhận kết quả đánh giá điểm số tức thì.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXAM STUDIO -->
+    <section style="padding: 4rem 0;">
+      <div class="container" style="max-width: 850px;">
+        
+        <div class="exam-header-bar">
+          <div>
+            <span class="hsk-badge" style="margin-right: 0.5rem;">HSK 3</span>
+            <span style="font-weight: 800; font-size: 1.1rem;">Đề Thi Mô Phỏng Tổng Hợp #01</span>
+          </div>
+          <div class="timer-box">
+            <i class="fas fa-clock"></i> <span id="examTimer">10:00</span>
+          </div>
+        </div>
+
+        <div id="examContainer">
+          <!-- Dynamically populated question cards & palette -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL CONTENT: HSK EXAM TIPS & STRATEGIES -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag"><i class="fas fa-bullseye"></i> Bí Kíp Đạt Điểm Cao</span>
+          <h2 class="section-title">Chiến Thuật & <span class="gradient-text">Mẹo Làm Bài Thi HSK</span></h2>
+          <p class="section-desc">Bí quyết giúp bạn tối ưu hóa thời gian và tăng tỷ lệ chọn đúng đáp án lên 90%.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-headphones-alt"></i></div>
+            <h3 class="knowledge-title">1. Mẹo Phần Thi Nghe Hiểu (听力)</h3>
+            <p class="knowledge-desc">
+              • Đọc lướt 4 đáp án trước khi băng phát nhạc.<br>
+              • Chú ý các từ nối chuyển ý như <strong>但是 (dànshì)</strong>, <strong>不过 (búguò)</strong> vì đáp án thường nằm ngay sau đó.
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-search-minus"></i></div>
+            <h3 class="knowledge-title">2. Mẹo Phần Thi Đọc Hiểu (阅读)</h3>
+            <p class="knowledge-desc">
+              • Áp dụng kỹ thuật Skimming & Scanning: Đọc câu hỏi trước rồi mới dò từ khóa (Keywords) trong đoạn văn gốc.<br>
+              • Loại trừ ngay các đáp án quá tuyệt đối (Luôn luôn, Tất cả).
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-pen-alt"></i></div>
+            <h3 class="knowledge-title">3. Mẹo Phần Thi Viết & Ghép Câu (书写)</h3>
+            <p class="knowledge-desc">
+              • Nhớ cấu trúc chuẩn: <strong>Chủ ngữ + Thời gian + Địa điểm + Động từ + Tân ngữ</strong>.<br>
+              • Ưu tiên viết những câu ngắn, đúng ngữ pháp thay vì ghép câu dài dễ sai nét.
+            </p>
+          </div>
+
+          <div class="knowledge-card">
+            <div class="knowledge-icon"><i class="fas fa-hourglass-half"></i></div>
+            <h3 class="knowledge-title">4. Phân Bổ Thời Gian Thi Lợp Lý</h3>
+            <p class="knowledge-desc">
+              • Dành 5 giây cuối mỗi câu để tô/chọn đáp án chắc chắn.<br>
+              • Không dồn quá 2 phút cho 1 câu khó. Hãy bỏ qua và quay lại sau.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Hán Ngữ Master. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/home.js"></script>
+  <script src="../js/pages/vocabulary.js"></script>
+  <script src="../js/pages/ai.js"></script>
+  <script src="../js/pages/hsk.js"></script>
+  <script src="../js/pages/exam.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

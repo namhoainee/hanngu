@@ -1,0 +1,57 @@
+/* Bảng dữ liệu quản lý */
+.admin-table-wrapper {
+  background: var(--bg-card); border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg); overflow-x: auto;
+}
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.admin-table th, .admin-table td {
+  padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--glass-border);
+  white-space: nowrap;
+}
+.admin-table th { color: var(--text-secondary); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.admin-table tbody tr:hover { background: var(--glass-bg); }
+.admin-table tbody tr:last-child td { border-bottom: none; }
+
+.admin-table-empty { text-align: center; color: var(--text-muted); padding: 2.5rem 1rem; }
+.admin-cell-empty { color: var(--text-muted); }
+
+.admin-table-actions { display: flex; gap: 0.5rem; }
+.admin-icon-btn {
+  width: 32px; height: 32px; border-radius: var(--radius-sm);
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.admin-icon-btn:hover { border-color: var(--primary-green); color: var(--primary-green); }
+.admin-icon-btn.danger:hover { border-color: var(--accent-crimson, #EF4444); color: var(--accent-crimson, #EF4444); }
+
+.admin-badge {
+  display: inline-block; padding: 0.25rem 0.75rem; border-radius: var(--radius-full);
+  font-size: 0.75rem; font-weight: 800;
+}
+.admin-badge.success { background: rgba(16, 185, 129, 0.15); color: var(--primary-green); }
+.admin-badge.muted { background: var(--glass-bg); color: var(--text-muted); border: 1px solid var(--glass-border); }
+
+/* Thanh tim kiem + loc, dat phia tren bang (vd trang Quan ly tu vung) */
+.admin-toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;
+}
+.admin-search-box {
+  flex: 1; min-width: 220px; position: relative; display: flex; align-items: center;
+}
+.admin-search-box i {
+  position: absolute; left: 0.9rem; color: var(--text-muted); font-size: 0.85rem;
+}
+.admin-search-box input {
+  width: 100%; padding: 0.65rem 1rem 0.65rem 2.3rem;
+  background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-sm);
+  color: var(--text-main); font-family: var(--font-main); font-size: 0.9rem;
+}
+.admin-search-box input:focus { outline: none; border-color: var(--primary-green); }
+
+.admin-filter-select {
+  padding: 0.65rem 1rem; background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm); color: var(--text-main); font-family: var(--font-main);
+  font-size: 0.85rem; min-width: 150px;
+}
+.admin-filter-select:focus { outline: none; border-color: var(--primary-green); }

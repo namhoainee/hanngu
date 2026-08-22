@@ -1,0 +1,17 @@
+{
+  "id": "hsk1-lesson-01",
+  "courseId": "hsk1",
+  "hskLevel": "HSK1",
+  "order": 1,
+  "title": "Chào Hỏi",
+  "titleCn": "打招呼",
+  "topic": "Chào hỏi & Giới thiệu bản thân",
+  "status": "published",
+  "description": "Bài học đầu tiên giúp bạn chào hỏi, hỏi tên và giới thiệu bản thân bằng tiếng Trung cơ bản.",
+  "listening": {
+    "available": false,
+    "placeholder": true,
+    "note": "Chưa triển khai audio thật ở giai đoạn này — chỉ hiển thị UI placeholder cho phần luyện nghe."
+  },
+  "_note": "Vocabulary/Grammar/Dialogue/Quiz cua bai hoc nay KHONG luu o day de tranh trung du lieu. Chung nam trong data/vocabulary/all-vocabulary.json, data/grammar/all-grammar.json, data/dialogues/all-dialogues.json, data/quiz/all-quiz.json va duoc loc theo lessonId === 'hsk1-lesson-01' boi js/api/lessonApi.js."
+}

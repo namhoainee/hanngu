@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Hán Ngữ Master — Main stylesheet
+   Chỉ import các module con theo đúng thứ tự cascade.
+   Muốn sửa style gì thì vào đúng file con bên dưới, đừng viết thẳng vào đây.
+   ========================================================================== */
+
+/* 1. Base: biến màu, reset, class dùng chung, animation */
+@import url('base/variables.css');
+@import url('base/utilities.css');
+@import url('base/animations.css');
+
+/* 2. Layout: khung sườn lặp lại ở mọi trang (navbar, footer, banner...) */
+@import url('layout/navbar.css');
+@import url('layout/mobile-drawer.css');
+@import url('layout/page-banner.css');
+@import url('layout/footer.css');
+@import url('layout/responsive.css');
+
+/* 3. Components: mảnh UI dùng lại ở nhiều trang */
+@import url('components/buttons.css');
+@import url('components/knowledge-card.css');
+@import url('components/modal-toast.css');
+
+/* 4. Pages: style riêng cho từng trang */
+@import url('pages/home.css');
+@import url('pages/pinyin.css');
+@import url('pages/vocabulary.css');
+@import url('pages/ai.css');
+@import url('pages/hsk.css');
+@import url('pages/exam.css');
+@import url('pages/lesson.css');

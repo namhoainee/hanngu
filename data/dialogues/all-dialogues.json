@@ -1,0 +1,50 @@
+{
+  "dialogues": [
+    {
+      "id": "d001",
+      "title": "Gặp Gỡ Lần Đầu",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi",
+      "hskLevel": "HSK1",
+      "lineCount": 6,
+      "lines": [
+        {
+          "speaker": "A",
+          "chinese": "你好！",
+          "pinyin": "Nǐ hǎo!",
+          "vietnamese": "Xin chào!"
+        },
+        {
+          "speaker": "B",
+          "chinese": "你好！你叫什么名字？",
+          "pinyin": "Nǐ hǎo! Nǐ jiào shénme míngzi?",
+          "vietnamese": "Chào bạn! Bạn tên là gì?"
+        },
+        {
+          "speaker": "A",
+          "chinese": "我叫小明。你呢？",
+          "pinyin": "Wǒ jiào Xiǎomíng. Nǐ ne?",
+          "vietnamese": "Tôi tên là Tiểu Minh. Còn bạn?"
+        },
+        {
+          "speaker": "B",
+          "chinese": "我叫玛丽，很高兴认识你。",
+          "pinyin": "Wǒ jiào Mǎlì, hěn gāoxìng rènshi nǐ.",
+          "vietnamese": "Tôi tên là Mary, rất vui được quen bạn."
+        },
+        {
+          "speaker": "A",
+          "chinese": "我也很高兴认识你。再见！",
+          "pinyin": "Wǒ yě hěn gāoxìng rènshi nǐ. Zàijiàn!",
+          "vietnamese": "Tôi cũng rất vui được quen bạn. Tạm biệt!"
+        },
+        {
+          "speaker": "B",
+          "chinese": "再见！",
+          "pinyin": "Zàijiàn!",
+          "vietnamese": "Tạm biệt!"
+        }
+      ]
+    }
+  ]
+}

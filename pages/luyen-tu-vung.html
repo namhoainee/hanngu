@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kho Từ Vựng & 214 Bộ Thủ Chữ Hán | Hán Ngữ Master</title>
+  <meta name="description" content="Tra cứu từ vựng HSK 1-6 thông minh, khám phá bảng bộ thủ chữ Hán thông dụng và luyện viết chữ Hán Thuận bút mượt mà.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header>
+    <nav class="navbar subpage" id="navbar">
+      <div class="container nav-container">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="trangchu.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="lotrinh-hsk.html" class="nav-link">Lộ Trình HSK</a></li>
+          <li><a href="luyen-pinyin.html" class="nav-link">Bảng Pinyin</a></li>
+          <li><a href="luyen-tu-vung.html" class="nav-link active">Từ Vựng & Hanzi</a></li>
+          <li><a href="ai-tutor.html" class="nav-link">AI Speaking Tutor</a></li>
+          <li><a href="thi-hsk.html" class="nav-link">Thi Thử HSK</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <a href="#" class="btn btn-secondary" data-modal="trialModal">Đăng Nhập</a>
+          <a href="#" class="btn btn-primary" data-modal="trialModal">
+            <i class="fas fa-sparkles"></i> Học Thử Miễn Phí
+          </a>
+          <button class="mobile-menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE DRAWER MENU -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="trangchu.html" class="logo">
+          <div class="logo-icon">龍</div>
+          <div class="logo-text">HánNgữ<span>Master</span></div>
+        </a>
+        <button id="closeMobileDrawerBtn" style="font-size: 1.5rem; color: var(--text-secondary);">&times;</button>
+      </div>
+
+      <ul class="mobile-drawer-links">
+        <li><a href="trangchu.html" class="mobile-drawer-link"><i class="fas fa-home"></i> Trang Chủ</a></li>
+        <li><a href="lotrinh-hsk.html" class="mobile-drawer-link"><i class="fas fa-graduation-cap"></i> Lộ Trình HSK</a></li>
+        <li><a href="luyen-pinyin.html" class="mobile-drawer-link"><i class="fas fa-music"></i> Bảng Pinyin</a></li>
+        <li><a href="luyen-tu-vung.html" class="mobile-drawer-link active"><i class="fas fa-book"></i> Từ Vựng & Hanzi</a></li>
+        <li><a href="ai-tutor.html" class="mobile-drawer-link"><i class="fas fa-robot"></i> AI Speaking Tutor</a></li>
+        <li><a href="thi-hsk.html" class="mobile-drawer-link"><i class="fas fa-stopwatch"></i> Thi Thử HSK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANNER -->
+    <section class="page-header-banner text-center">
+      <div class="container">
+        <span class="section-tag"><i class="fas fa-search"></i> Tra Cứu Thông Minh</span>
+        <h1 class="section-title">Kho Từ Vựng & <span class="gradient-text">Bộ Thủ Chữ Hán</span></h1>
+        <p class="section-desc">
+          Nhập Hán tự, Pinyin hoặc Tiếng Việt để tra cứu tức thì. Khám phá bí kíp bộ thủ giúp nhớ nhanh gấp 3 lần.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEARCH & GRID -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        
+        <div class="vocab-search-container">
+          <i class="fas fa-search vocab-search-icon"></i>
+          <input type="text" id="vocabSearchInput" class="vocab-search-input" placeholder="Nhập chữ Hán (VD: 你好), Pinyin (ni hao) hoặc Tiếng Việt (Xin chào)...">
+        </div>
+
+        <div class="vocab-grid" id="vocabGrid">
+          <!-- Rendered dynamically by script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL CONTENT: 214 RADICALS TABLE -->
+    <section style="padding: 4rem 0; background: var(--bg-secondary); border-top: 1px solid var(--glass-border);">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag"><i class="fas fa-shapes"></i> Cốt Lõi Chữ Hán</span>
+          <h2 class="section-title">Bảng <span class="gradient-text">Bộ Thủ Chữ Hán</span> Thường Gặp Nhất</h2>
+          <p class="section-desc">Hiểu cấu tạo bộ thủ giúp bạn dễ dàng ghi nhớ hàng ngàn chữ Hán phức tạp.</p>
+        </div>
+
+        <div class="knowledge-grid">
+          
+          <div class="knowledge-card">
+            <div style="font-size: 3rem; color: var(--accent-gold); font-family: var(--font-chinese-serif); font-weight: 800;">亻 (人)</div>
+            <h3 class="knowledge-title">Bộ Nhân (rén)</h3>
+            <p class="knowledge-desc">Ý nghĩa liên quan đến Con Người.<br><em>Ví dụ: 你 (bạn), 他 (anh ấy), 休 (nghỉ ngơi).</em></p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 3rem; color: var(--accent-gold); font-family: var(--font-chinese-serif); font-weight: 800;">氵 (水)</div>
+            <h3 class="knowledge-title">Bộ Thủy (shuǐ)</h3>
+            <p class="knowledge-desc">Ý nghĩa liên quan đến Nước, Sông Hồ.<br><em>Ví dụ: 河 (sông), 洗 (rửa), 汁 (nước ép).</em></p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 3rem; color: var(--accent-gold); font-family: var(--font-chinese-serif); font-weight: 800;">木</div>
+            <h3 class="knowledge-title">Bộ Mộc (mù)</h3>
+            <p class="knowledge-desc">Ý nghĩa liên quan đến Cây Cối, Gỗ.<br><em>Ví dụ: 林 (rừng), 桌 (bàn), 椅 (ghế).</em></p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 3rem; color: var(--accent-gold); font-family: var(--font-chinese-serif); font-weight: 800;">灬 (火)</div>
+            <h3 class="knowledge-title">Bộ Hỏa (huǒ)</h3>
+            <p class="knowledge-desc">Ý nghĩa liên quan đến Lửa, Nhiệt Độ.<br><em>Ví dụ: 热 (nóng), 煮 (nấu), 煎 (chián).</em></p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 3rem; color: var(--accent-gold); font-family: var(--font-chinese-serif); font-weight: 800;">女</div>
+            <h3 class="knowledge-title">Bộ Nữ (nǚ)</h3>
+            <p class="knowledge-desc">Ý nghĩa liên quan đến Phụ Nữ.<br><em>Ví dụ: 妈 (mẹ), 妹 (em gái), 姐 (chị gái).</em></p>
+          </div>
+
+          <div class="knowledge-card">
+            <div style="font-size: 3rem; color: var(--accent-gold); font-family: var(--font-chinese-serif); font-weight: 800;">忄 (心)</div>
+            <h3 class="knowledge-title">Bộ Tâm (xīn)</h3>
+            <p class="knowledge-desc">Ý nghĩa liên quan đến Trái Tim, Cảm Xúc.<br><em>Ví dụ: 想 (muốn/nhớ), 怕 (sợ), 快 (vui).</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HANZI STROKE PRACTICE -->
+    <section style="padding: 4rem 0;">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag"><i class="fas fa-pen-nib"></i> Bảng Luyện Nét</span>
+          <h2 class="section-title">Luyện Viết Chữ Hán <span class="gradient-text">Thuận Bút</span></h2>
+        </div>
+
+        <div class="stroke-practice-box" style="margin-top: 2rem;">
+          <div class="text-left">
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Tập Viết Trực Tiếp</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+              Dùng chuột hoặc ngón tay để vẽ đè lên ô mễ (米字格).
+            </p>
+
+            <!-- Color Picker -->
+            <div class="canvas-toolbar">
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);">Màu nét:</span>
+              <div class="color-picker">
+                <button class="color-btn active" data-color="#E63946" style="background: #E63946;"></button>
+                <button class="color-btn" data-color="#FFB703" style="background: #FFB703;"></button>
+                <button class="color-btn" data-color="#10B981" style="background: #10B981;"></button>
+                <button class="color-btn" data-color="#FFFFFF" style="background: #FFFFFF;"></button>
+              </div>
+            </div>
+
+            <div class="character-selector">
+              <button class="char-btn active" data-char="学">学</button>
+              <button class="char-btn" data-char="福">福</button>
+              <button class="char-btn" data-char="爱">爱</button>
+              <button class="char-btn" data-char="龙">龙</button>
+            </div>
+
+            <div class="stroke-controls">
+              <button class="btn btn-secondary" id="undoCanvasBtn"><i class="fas fa-undo"></i> Hoàn Nét</button>
+              <button class="btn btn-secondary" id="clearCanvasBtn"><i class="fas fa-eraser"></i> Xóa Nét</button>
+              <button class="btn btn-primary" data-speak="学"><i class="fas fa-volume-up"></i> Phát Âm</button>
+            </div>
+          </div>
+
+          <div class="canvas-wrapper">
+            <svg class="grid-lines" viewBox="0 0 290 290">
+              <line x1="0" y1="145" x2="290" y2="145" />
+              <line x1="145" y1="0" x2="145" y2="290" />
+              <line x1="0" y1="0" x2="290" y2="290" />
+              <line x1="290" y1="0" x2="0" y2="290" />
+            </svg>
+            <div id="guideCharacter" style="position: absolute; font-size: 11.5rem; color: rgba(255,255,255,0.08); font-family: var(--font-calligraphy); user-select: none; pointer-events: none;">学</div>
+            <canvas id="hanziCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 Hán Ngữ Master. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/utils/toast.js"></script>
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/components/navbar.js"></script>
+  <script src="../js/components/tabs.js"></script>
+  <script src="../js/components/speech.js"></script>
+  <script src="../js/components/modal.js"></script>
+  <script src="../js/pages/home.js"></script>
+  <script src="../js/pages/vocabulary.js"></script>
+  <script src="../js/pages/ai.js"></script>
+  <script src="../js/pages/hsk.js"></script>
+  <script src="../js/pages/exam.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

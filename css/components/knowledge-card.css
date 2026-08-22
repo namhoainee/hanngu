@@ -1,0 +1,7 @@
+/* KNOWLEDGE BOXES */
+.knowledge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem; margin-top: 2.5rem; }
+.knowledge-card { background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1.75rem; transition: all 0.2s; }
+.knowledge-card:hover { border-color: var(--accent-gold); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.knowledge-icon { font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; }
+.knowledge-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.6rem; }
+.knowledge-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }

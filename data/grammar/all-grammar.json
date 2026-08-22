@@ -1,0 +1,26 @@
+{
+  "grammar": [
+    {
+      "id": "g001",
+      "title": "Câu hỏi Có/Không với 吗 (ma)",
+      "hskLevel": "HSK1",
+      "explain": "Thêm trợ từ 吗 vào cuối một câu trần thuật để biến nó thành câu hỏi Có/Không. Cấu trúc: Chủ ngữ + Vị ngữ + 吗？",
+      "example": "你是学生吗？",
+      "examplePinyin": "Nǐ shì xuésheng ma?",
+      "exampleVi": "Bạn là học sinh phải không?",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi"
+    },
+    {
+      "id": "g002",
+      "title": "Động từ 叫 để giới thiệu tên",
+      "hskLevel": "HSK1",
+      "explain": "Dùng 叫 (jiào) để nói tên của mình hoặc hỏi tên người khác. Cấu trúc: Chủ ngữ + 叫 + Tên.",
+      "example": "我叫王芳，你呢？",
+      "examplePinyin": "Wǒ jiào Wáng Fāng, nǐ ne?",
+      "exampleVi": "Tôi tên là Vương Phương, còn bạn?",
+      "lessonId": "hsk1-lesson-01",
+      "lessonTitle": "Chào Hỏi"
+    }
+  ]
+}
